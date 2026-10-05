@@ -1,25 +1,25 @@
 export const navItems = [
-  ['About Us', 'about'], ['Technology', 'technology'], ['Strategies', 'strategies'],
-  ['Partner Ecosystem', 'partners'], ['Transparency & Web3', 'transparency'], ['Inspirations', 'inspirations'],
+  ['About', 'about'], ['Technology', 'technology'], ['Markets', 'strategies'],
+  ['Partners', 'partners'], ['Transparency', 'transparency'], ['Inspirations', 'inspirations'],
 ] as const
 
 export const socials = [
-  { label: 'Telegram Official Channel', href: 'https://t.me/polyrust_official', icon: 'telegram' },
-  { label: 'Telegram Support', href: 'https://t.me/Anna_Polyrust_Support', icon: 'telegram' },
-  { label: 'Instagram', href: 'https://www.instagram.com/polyrust_net', icon: 'instagram' },
+  { label: 'Telegram', href: 'https://t.me/polyrust_official' },
+  { label: 'Support', href: 'https://t.me/Anna_Polyrust_Support' },
+  { label: 'Instagram', href: 'https://www.instagram.com/polyrust_net' },
 ] as const
 
 export const strategies = [
-  { name: 'Sports Bot', text: 'An adaptive strategy designed to analyze sports prediction markets and respond to changing probabilities and market activity.', icon: '◉', tag: 'SPORTS / SIGNAL', kind: 'sports' },
-  { name: 'Crypto Bot', text: 'A strategy focused on cryptocurrency prediction markets, analyzing price movements, volatility and short-term market signals.', icon: '⌁', tag: 'CRYPTO / SIGNAL', kind: 'crypto' },
-  { name: 'Politics Bot', text: 'An adaptive strategy designed to analyze political prediction markets and evaluate changing probabilities in response to new information.', icon: '◎', tag: 'POLITICS / SIGNAL', kind: 'politics' },
-  { name: 'World Events Bot', text: 'A strategy focused on global events and prediction markets, adapting to changing probabilities and emerging market signals.', icon: '✳', tag: 'WORLD / SIGNAL', kind: 'world' },
-]
+  { name: 'Sports', kind: 'sports', text: 'Responds to changing outcome probabilities and trading activity in sports prediction markets.', focus: 'Focus: probabilities and market activity' },
+  { name: 'Crypto', kind: 'crypto', text: 'Analyzes price movements, volatility and short-term signals in cryptocurrency prediction markets.', focus: 'Focus: momentum and volatility' },
+  { name: 'Politics', kind: 'politics', text: 'Evaluates how new information shifts probabilities in political prediction markets.', focus: 'Focus: information and probability shifts' },
+  { name: 'World events', kind: 'world', text: 'Tracks emerging market signals as global developments change expectations and probabilities.', focus: 'Focus: events and changing expectations' },
+] as const
 
 export const partners = [8, 6, 4, 2, .5, .5, .5, .5, .5, .5]
 
 export const inspirations = [
-  { name: 'Robin Hanson', role: 'Foundations of Prediction Markets', text: 'An economist and researcher known for his work on prediction markets and the idea of using markets to aggregate information and forecasts.', tag: 'PREDICTION MARKET THEORY', imagePosition: '0%' },
-  { name: 'Primo Data', role: 'Analytics and Market Insights', text: 'An independent analytics project associated with Polymarket data, providing tools and insights for exploring prediction-market activity.', tag: 'MARKET ANALYTICS', imagePosition: '-100%' },
-  { name: 'Shayne Coplan', role: 'Polymarket and the Vision', text: 'Founder of Polymarket, a platform that has helped bring prediction markets to a broader audience through blockchain technology.', tag: 'PREDICTION MARKET INNOVATION', imagePosition: '-200%' },
-]
+  { name: 'Robin Hanson', role: 'Prediction market theory', text: 'An economist and researcher whose work explores how markets aggregate dispersed information into forecasts.' },
+  { name: 'Primo Data', role: 'Market analytics', text: 'An independent analytics project providing tools and insights for exploring Polymarket activity.' },
+  { name: 'Shayne Coplan', role: 'Polymarket founder', text: 'Founder of Polymarket, bringing blockchain-based prediction markets to a broader audience.' },
+] as const
