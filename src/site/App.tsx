@@ -181,7 +181,7 @@ function Transparency() {
 }
 
 function Inspirations() {
-  return <section className="editorial-section inspirations-section" id="inspirations"><Reveal className="section-header"><div><span className="eyebrow">Ideas that inform us</span><h2>Markets are<br />collective intelligence.</h2></div><p>The research, analytics and platforms that shape how we think about information and prediction.</p></Reveal><div className="inspiration-grid">{inspirations.map((item, i) => <Reveal key={item.name}><article className="inspiration-card"><span className="inspiration-index">0{i + 1}</span><h3>{item.name}</h3><div className="inspiration-role">{item.role}</div><p>{item.text}</p></article></Reveal>)}</div><p className="section-note">Presented for inspiration and information only. No partnership, endorsement or affiliation is implied.</p></section>
+  return <section className="editorial-section inspirations-section" id="inspirations"><Reveal className="section-header"><div><span className="eyebrow">Ideas that inform us</span><h2>Markets are<br />collective intelligence.</h2></div><p>The research, analytics and platforms that shape how we think about information and prediction.</p></Reveal><div className="inspiration-grid">{inspirations.map((item, i) => <Reveal key={item.name}><article className="inspiration-card"><span className="inspiration-index">0{i + 1}</span><h3>{item.name}</h3><div className="inspiration-role">{item.role}</div><p>{item.text}</p></article></Reveal>)}</div></section>
 }
 
 function Footer({ paused }: { paused: boolean }) {
