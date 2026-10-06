@@ -176,8 +176,8 @@ function Partners() {
 }
 
 function Transparency() {
-  const layers = [['Access', 'Crypto wallet', 'Interact without a traditional account.'], ['Execution', 'Smart contract logic', 'Operational conditions defined in code.'], ['Verification', 'Blockchain records', 'Review code, logic and transaction history.']]
-  return <section className="editorial-section" id="transparency"><div className="transparency-layout"><Reveal className="transparency-copy"><span className="eyebrow">Transparency & Web3</span><h2>Less trust.<br />More verification.</h2><p>Wallet-based access and predefined smart contract logic form the platform’s Web3 architecture.</p><p>Once deployed, contract code, execution conditions and transaction history can be checked independently on the blockchain.</p><p className="verification-note">Verify the official contract address before interacting. This public site does not currently connect wallets or execute transactions.</p></Reveal><Reveal className="architecture-stack">{layers.map(([label, title, text], i) => <article className="architecture-layer" key={label}><span>0{i + 1} / {label}</span><h3>{title}</h3><p>{text}</p></article>)}</Reveal></div></section>
+  const features = ['On-Chain Verification', 'Transparent Logic', 'Verifiable Transactions']
+  return <section className="editorial-section" id="transparency"><div className="transparency-layout"><Reveal className="transparency-copy"><h2>Transparency & Web3</h2><p>POLYRUST is built on Web3 principles, featuring direct interaction via crypto wallets and logic defined by smart contracts.</p><p>Key operational parameters are embedded in the code and can be verified directly on the blockchain. Users can independently check the contract address, its code, and the transaction history.</p><p>Transparency begins with the ability to verify the system independently.</p><p className="verification-note">{features.join(' · ')}</p></Reveal><Reveal className="architecture-stack">{features.map((feature, i) => <article className="architecture-layer" key={feature}><span>0{i + 1} / WEB3</span><h3>{feature}</h3></article>)}</Reveal></div></section>
 }
 
 function Inspirations() {
