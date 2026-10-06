@@ -115,15 +115,15 @@ svg { display: block; }
 .strategy-info h3 { font-size: 28px; margin: 10px 0 16px; }
 .strategy-info p { font-size: 13px; max-width: 440px; }
 .strategy-focus { padding-top: 20px; margin-top: 24px; border-top: 1px solid rgba(255,255,255,.08); font-size: 10px; color: #85838f; }
-.strategy-card-sports { border-color: #5c243e; border-radius: 20px; background: linear-gradient(145deg,#14070d,#090407 72%); }
-.strategy-card-sports:hover { border-color: #bd3e73; }
-.strategy-card-sports .strategy-visual { aspect-ratio: 2.55; padding: 0; background: #10050a; border-bottom-color: rgba(255,75,142,.2); }
-.strategy-card-sports .strategy-visual img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 52%; }
-.strategy-card-sports .strategy-info { padding: 28px 32px 26px; }
-.strategy-card-sports .strategy-index { color: #f05a9a; font-size: 14px; }
-.strategy-card-sports .strategy-info h3 { color: #fff8fb; font-size: 40px; line-height: 1.15; margin: 12px 0 18px; }
-.strategy-card-sports .strategy-info p { color: #e0cbd5; font-size: 18px; line-height: 1.7; max-width: 600px; }
-.strategy-card-sports .strategy-focus { color: #d9aabb; font-size: 14px; line-height: 1.6; padding-top: 16px; margin-top: 22px; border-top-color: rgba(255,75,142,.38); }
+.strategy-card-illustrated { border-color: #5c243e; border-radius: 20px; background: linear-gradient(145deg,#14070d,#090407 72%); }
+.strategy-card-illustrated:hover { border-color: #bd3e73; }
+.strategy-card-illustrated .strategy-visual { aspect-ratio: 2.55; padding: 0; background: #10050a; border-bottom-color: rgba(255,75,142,.2); }
+.strategy-card-illustrated .strategy-visual img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 52%; }
+.strategy-card-illustrated .strategy-info { padding: 28px 32px 26px; }
+.strategy-card-illustrated .strategy-index { color: #f05a9a; font-size: 14px; }
+.strategy-card-illustrated .strategy-info h3 { color: #fff8fb; font-size: 40px; line-height: 1.15; margin: 12px 0 18px; }
+.strategy-card-illustrated .strategy-info p { color: #e0cbd5; font-size: 18px; line-height: 1.7; max-width: 600px; }
+.strategy-card-illustrated .strategy-focus { color: #d9aabb; font-size: 14px; line-height: 1.6; padding-top: 16px; margin-top: 22px; border-top-color: rgba(255,75,142,.38); }
 .section-note { font-size: 10px; color: #87848e; max-width: 900px; margin-top: 28px; }
 .partners-layout, .transparency-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: center; }
 .partner-copy > p, .transparency-copy > p { max-width: 500px; margin-top: 24px; }
@@ -281,13 +281,13 @@ svg { display: block; }
   .strategy-info h3 { font-size: 26px; }
   .strategy-info p { font-size: 12px; }
   .strategy-focus { font-size: 9px; }
-  .strategy-card-sports { border-radius: 16px; }
-  .strategy-card-sports .strategy-visual { aspect-ratio: 1.65; }
-  .strategy-card-sports .strategy-info { padding: 22px 22px 20px; }
-  .strategy-card-sports .strategy-index { font-size: 13px; }
-  .strategy-card-sports .strategy-info h3 { font-size: 34px; margin: 10px 0 14px; }
-  .strategy-card-sports .strategy-info p { font-size: 16px; line-height: 1.65; }
-  .strategy-card-sports .strategy-focus { font-size: 13px; padding-top: 14px; margin-top: 18px; }
+  .strategy-card-illustrated { border-radius: 16px; }
+  .strategy-card-illustrated .strategy-visual { aspect-ratio: 1.65; }
+  .strategy-card-illustrated .strategy-info { padding: 22px 22px 20px; }
+  .strategy-card-illustrated .strategy-index { font-size: 13px; }
+  .strategy-card-illustrated .strategy-info h3 { font-size: 34px; margin: 10px 0 14px; }
+  .strategy-card-illustrated .strategy-info p { font-size: 16px; line-height: 1.65; }
+  .strategy-card-illustrated .strategy-focus { font-size: 13px; padding-top: 14px; margin-top: 18px; }
   .section-note { font-size: 9px; }
   .partner-copy > p, .transparency-copy > p { font-size: 12px; }
   .levels-card { padding: 24px 20px; }

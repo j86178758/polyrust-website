@@ -11,7 +11,7 @@ export const socials = [
 
 export const strategies = [
   { name: 'Sports Bot', kind: 'sports', text: 'Responds to changing outcome probabilities and trading activity in sports prediction markets.', focus: 'Focus: probabilities and market activity' },
-  { name: 'Crypto', kind: 'crypto', text: 'Analyzes price movements, volatility and short-term signals in cryptocurrency prediction markets.', focus: 'Focus: momentum and volatility' },
+  { name: 'Crypto Bot', kind: 'crypto', text: 'Analyzes price movements, volatility and short-term signals in cryptocurrency prediction markets.', focus: 'Focus: momentum and volatility' },
   { name: 'Politics', kind: 'politics', text: 'Evaluates how new information shifts probabilities in political prediction markets.', focus: 'Focus: information and probability shifts' },
   { name: 'World events', kind: 'world', text: 'Tracks emerging market signals as global developments change expectations and probabilities.', focus: 'Focus: events and changing expectations' },
 ] as const
