@@ -1,0 +1,31 @@
+{
+  "name": "polyrust-ccip-payments",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "compile": "node scripts/compile.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run compile && tsx --test test/*.test.ts",
+    "deploy:hub": "npm run compile && tsx scripts/deploy.ts",
+        "deploy:testnet": "npm run compile && tsx scripts/deploy.ts",
+    "order:create": "tsx scripts/order.ts",
+    "pay:testnet": "tsx scripts/pay.ts",
+    "status": "tsx scripts/status.ts",
+        "rewards:fund": "tsx scripts/order.ts fund",
+        "stake:create": "tsx scripts/order.ts stake",
+        "stake:claim": "tsx scripts/claim.ts"
+  },
+  "dependencies": {
+    "viem": "2.57.3"
+  },
+  "devDependencies": {
+    "@chainlink/contracts-ccip": "2.0.0",
+    "@openzeppelin/contracts": "5.3.0",
+    "@types/node": "^22.0.0",
+    "ganache": "7.9.2",
+    "solc": "0.8.30",
+    "tsx": "^4.20.0",
+    "typescript": "~5.8.3"
+  }
+}

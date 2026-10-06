@@ -1,0 +1,376 @@
+{
+  "verifiedAt": "2026-10-06",
+  "sources": [
+    "https://docs.chain.link/ccip/directory/testnet/token/USDC",
+    "https://docs.chain.link/ccip/directory/mainnet/token/USDC",
+    "https://docs.chain.link/ccip/directory/mainnet/token/GHO"
+  ],
+  "hubs": {
+    "testnet": "ethereum-testnet-sepolia-arbitrum-1",
+    "mainnet": "ethereum-mainnet-arbitrum-1"
+  },
+  "networks": [
+    {
+      "key": "ethereum-testnet-sepolia-base-1",
+      "name": "Base Sepolia",
+      "environment": "testnet",
+      "chainId": 84532,
+      "chainSelector": "10344971235874465080",
+      "router": "0xD3b06cEbF099CE7DA4AcCf578aaebFDBd6e88a93",
+      "nativeSymbol": "ETH",
+      "explorer": "https://sepolia.basescan.org",
+      "tokens": [
+        {
+          "symbol": "USDC",
+          "address": "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
+          "decimals": 6,
+          "hubToken": "0x75faf114eafb1BDbe2F0316DF893fd58CE46AA4d",
+          "routeToHub": true
+        }
+      ],
+      "directory": "https://docs.chain.link/ccip/directory/testnet/chain/ethereum-testnet-sepolia-base-1"
+    },
+    {
+      "key": "ethereum-testnet-sepolia-arbitrum-1",
+      "name": "Arbitrum Sepolia",
+      "environment": "testnet",
+      "chainId": 421614,
+      "chainSelector": "3478487238524512106",
+      "router": "0x2a9C5afB0d0e4BAb2BCdaE109EC4b0c4Be15a165",
+      "nativeSymbol": "ETH",
+      "explorer": "https://sepolia.arbiscan.io",
+      "tokens": [
+        {
+          "symbol": "USDC",
+          "address": "0x75faf114eafb1BDbe2F0316DF893fd58CE46AA4d",
+          "decimals": 6,
+          "hubToken": "0x75faf114eafb1BDbe2F0316DF893fd58CE46AA4d",
+          "routeToHub": false
+        }
+      ],
+      "directory": "https://docs.chain.link/ccip/directory/testnet/chain/ethereum-testnet-sepolia-arbitrum-1"
+    },
+    {
+      "key": "mainnet",
+      "name": "Ethereum",
+      "environment": "mainnet",
+      "chainId": 1,
+      "chainSelector": "5009297550715157269",
+      "router": "0x80226fc0Ee2b096224EeAc085Bb9a8cba1146f7D",
+      "nativeSymbol": "ETH",
+      "explorer": "https://etherscan.io",
+      "tokens": [
+        {
+          "symbol": "USDC",
+          "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+          "decimals": 6,
+          "hubToken": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+          "routeToHub": true
+        },
+        {
+          "symbol": "GHO",
+          "address": "0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f",
+          "decimals": 18,
+          "hubToken": "0x7dfF72693f6A4149b17e7C6314655f6A9F7c8B33",
+          "routeToHub": true
+        }
+      ],
+      "directory": "https://docs.chain.link/ccip/directory/mainnet/chain/mainnet"
+    },
+    {
+      "key": "ethereum-mainnet-arbitrum-1",
+      "name": "Arbitrum One",
+      "environment": "mainnet",
+      "chainId": 42161,
+      "chainSelector": "4949039107694359620",
+      "router": "0x141fa059441E0ca23ce184B6A78bafD2A517DdE8",
+      "nativeSymbol": "ETH",
+      "explorer": "https://explorer.arbitrum.io",
+      "tokens": [
+        {
+          "symbol": "USDC",
+          "address": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+          "decimals": 6,
+          "hubToken": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+          "routeToHub": false
+        },
+        {
+          "symbol": "GHO",
+          "address": "0x7dfF72693f6A4149b17e7C6314655f6A9F7c8B33",
+          "decimals": 18,
+          "hubToken": "0x7dfF72693f6A4149b17e7C6314655f6A9F7c8B33",
+          "routeToHub": false
+        }
+      ],
+      "directory": "https://docs.chain.link/ccip/directory/mainnet/chain/ethereum-mainnet-arbitrum-1"
+    },
+    {
+      "key": "ethereum-mainnet-base-1",
+      "name": "Base",
+      "environment": "mainnet",
+      "chainId": 8453,
+      "chainSelector": "15971525489660198786",
+      "router": "0x881e3A65B4d4a04dD529061dd0071cf975F58bCD",
+      "nativeSymbol": "ETH",
+      "explorer": "https://basescan.org",
+      "tokens": [
+        {
+          "symbol": "USDC",
+          "address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "decimals": 6,
+          "hubToken": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+          "routeToHub": true
+        },
+        {
+          "symbol": "GHO",
+          "address": "0x6Bb7a212910682DCFdbd5BCBb3e28FB4E8da10Ee",
+          "decimals": 18,
+          "hubToken": "0x7dfF72693f6A4149b17e7C6314655f6A9F7c8B33",
+          "routeToHub": true
+        }
+      ],
+      "directory": "https://docs.chain.link/ccip/directory/mainnet/chain/ethereum-mainnet-base-1"
+    },
+    {
+      "key": "ethereum-mainnet-optimism-1",
+      "name": "OP",
+      "environment": "mainnet",
+      "chainId": 10,
+      "chainSelector": "3734403246176062136",
+      "router": "0x3206695CaE29952f4b0c22a169725a865bc8Ce0f",
+      "nativeSymbol": "ETH",
+      "explorer": "https://optimistic.etherscan.io",
+      "tokens": [
+        {
+          "symbol": "USDC",
+          "address": "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85",
+          "decimals": 6,
+          "hubToken": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+          "routeToHub": true
+        }
+      ],
+      "directory": "https://docs.chain.link/ccip/directory/mainnet/chain/ethereum-mainnet-optimism-1"
+    },
+    {
+      "key": "matic-mainnet",
+      "name": "Polygon",
+      "environment": "mainnet",
+      "chainId": 137,
+      "chainSelector": "4051577828743386545",
+      "router": "0x849c5ED5a80F5B408Dd4969b78c2C8fdf0565Bfe",
+      "nativeSymbol": "POL",
+      "explorer": "https://polygonscan.com",
+      "tokens": [
+        {
+          "symbol": "USDC",
+          "address": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+          "decimals": 6,
+          "hubToken": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+          "routeToHub": true
+        }
+      ],
+      "directory": "https://docs.chain.link/ccip/directory/mainnet/chain/matic-mainnet"
+    },
+    {
+      "key": "avalanche-mainnet",
+      "name": "Avalanche",
+      "environment": "mainnet",
+      "chainId": 43114,
+      "chainSelector": "6433500567565415381",
+      "router": "0xF4c7E640EdA248ef95972845a62bdC74237805dB",
+      "nativeSymbol": "AVAX",
+      "explorer": "https://snowtrace.io",
+      "tokens": [
+        {
+          "symbol": "USDC",
+          "address": "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
+          "decimals": 6,
+          "hubToken": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+          "routeToHub": true
+        },
+        {
+          "symbol": "GHO",
+          "address": "0xfc421aD3C883Bf9E7C4f42dE845C4e4405799e73",
+          "decimals": 18,
+          "hubToken": "0x7dfF72693f6A4149b17e7C6314655f6A9F7c8B33",
+          "routeToHub": true
+        }
+      ],
+      "directory": "https://docs.chain.link/ccip/directory/mainnet/chain/avalanche-mainnet"
+    },
+    {
+      "key": "xdai-mainnet",
+      "name": "Gnosis",
+      "environment": "mainnet",
+      "chainId": 100,
+      "chainSelector": "465200170687744372",
+      "router": "0x4aAD6071085df840abD9Baf1697d5D5992bDadce",
+      "nativeSymbol": "XDAI",
+      "explorer": "https://gnosis.blockscout.com",
+      "tokens": [
+        {
+          "symbol": "GHO",
+          "address": "0xfc421aD3C883Bf9E7C4f42dE845C4e4405799e73",
+          "decimals": 18,
+          "hubToken": "0x7dfF72693f6A4149b17e7C6314655f6A9F7c8B33",
+          "routeToHub": true
+        }
+      ],
+      "directory": "https://docs.chain.link/ccip/directory/mainnet/chain/xdai-mainnet"
+    },
+    {
+      "key": "ethereum-mainnet-mantle-1",
+      "name": "Mantle",
+      "environment": "mainnet",
+      "chainId": 5000,
+      "chainSelector": "1556008542357238666",
+      "router": "0x670052635a9850bb45882Cb2eCcF66bCff0F41B7",
+      "nativeSymbol": "MNT",
+      "explorer": "https://mantlescan.xyz",
+      "tokens": [
+        {
+          "symbol": "GHO",
+          "address": "0xfc421aD3C883Bf9E7C4f42dE845C4e4405799e73",
+          "decimals": 18,
+          "hubToken": "0x7dfF72693f6A4149b17e7C6314655f6A9F7c8B33",
+          "routeToHub": true
+        }
+      ],
+      "directory": "https://docs.chain.link/ccip/directory/mainnet/chain/ethereum-mainnet-mantle-1"
+    },
+    {
+      "key": "monad-mainnet",
+      "name": "Monad",
+      "environment": "mainnet",
+      "chainId": 143,
+      "chainSelector": "8481857512324358265",
+      "router": "0x33566fE5976AAa420F3d5C64996641Fc3858CaDB",
+      "nativeSymbol": "MON",
+      "explorer": "https://monadvision.com/",
+      "tokens": [
+        {
+          "symbol": "USDC",
+          "address": "0x754704Bc059F8C67012fEd69BC8A327a5aafb603",
+          "decimals": 6,
+          "hubToken": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+          "routeToHub": true
+        },
+        {
+          "symbol": "GHO",
+          "address": "0xfc421aD3C883Bf9E7C4f42dE845C4e4405799e73",
+          "decimals": 18,
+          "hubToken": "0x7dfF72693f6A4149b17e7C6314655f6A9F7c8B33",
+          "routeToHub": true
+        }
+      ],
+      "directory": "https://docs.chain.link/ccip/directory/mainnet/chain/monad-mainnet"
+    },
+    {
+      "key": "plasma-mainnet",
+      "name": "Plasma",
+      "environment": "mainnet",
+      "chainId": 9745,
+      "chainSelector": "9335212494177455608",
+      "router": "0xcDca5D374e46A6DDDab50bD2D9acB8c796eC35C3",
+      "nativeSymbol": "XPL",
+      "explorer": "https://plasmascan.to",
+      "tokens": [
+        {
+          "symbol": "GHO",
+          "address": "0xb77E872A68C62CfC0dFb02C067Ecc3DA23B4bbf3",
+          "decimals": 18,
+          "hubToken": "0x7dfF72693f6A4149b17e7C6314655f6A9F7c8B33",
+          "routeToHub": true
+        }
+      ],
+      "directory": "https://docs.chain.link/ccip/directory/mainnet/chain/plasma-mainnet"
+    },
+    {
+      "key": "ethereum-mainnet-xlayer-1",
+      "name": "X Layer",
+      "environment": "mainnet",
+      "chainId": 196,
+      "chainSelector": "3016212468291539606",
+      "router": "0xF2b6Cb7867EB5502C3249dD37D7bc1Cc148e5232",
+      "nativeSymbol": "OKB",
+      "explorer": "https://www.oklink.com/xlayer",
+      "tokens": [
+        {
+          "symbol": "GHO",
+          "address": "0xDe6539018B095353A40753Dc54C91C68c9487D4E",
+          "decimals": 18,
+          "hubToken": "0x7dfF72693f6A4149b17e7C6314655f6A9F7c8B33",
+          "routeToHub": true
+        }
+      ],
+      "directory": "https://docs.chain.link/ccip/directory/mainnet/chain/ethereum-mainnet-xlayer-1"
+    },
+    {
+      "key": "ethereum-mainnet-unichain-1",
+      "name": "Unichain",
+      "environment": "mainnet",
+      "chainId": 130,
+      "chainSelector": "1923510103922296319",
+      "router": "0x68891f5F96695ECd7dEdBE2289D1b73426ae7864",
+      "nativeSymbol": "ETH",
+      "explorer": "https://uniscan.xyz",
+      "tokens": [
+        {
+          "symbol": "USDC",
+          "address": "0x078D782b760474a361dDA0AF3839290b0EF57AD6",
+          "decimals": 6,
+          "hubToken": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+          "routeToHub": true
+        }
+      ],
+      "directory": "https://docs.chain.link/ccip/directory/mainnet/chain/ethereum-mainnet-unichain-1"
+    },
+    {
+      "key": "ethereum-mainnet-ink-1",
+      "name": "Ink",
+      "environment": "mainnet",
+      "chainId": 57073,
+      "chainSelector": "3461204551265785888",
+      "router": "0xca7c90A52B44E301AC01Cb5EB99b2fD99339433A",
+      "nativeSymbol": "ETH",
+      "explorer": "https://explorer.inkonchain.com",
+      "tokens": [
+        {
+          "symbol": "USDC",
+          "address": "0x2D270e6886d130D724215A266106e6832161EAEd",
+          "decimals": 6,
+          "hubToken": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+          "routeToHub": true
+        },
+        {
+          "symbol": "GHO",
+          "address": "0xfc421aD3C883Bf9E7C4f42dE845C4e4405799e73",
+          "decimals": 18,
+          "hubToken": "0x7dfF72693f6A4149b17e7C6314655f6A9F7c8B33",
+          "routeToHub": true
+        }
+      ],
+      "directory": "https://docs.chain.link/ccip/directory/mainnet/chain/ethereum-mainnet-ink-1"
+    },
+    {
+      "key": "hyperliquid-mainnet",
+      "name": "HyperEVM",
+      "environment": "mainnet",
+      "chainId": 999,
+      "chainSelector": "2442541497099098535",
+      "router": "0x13b3332b66389B1467CA6eBd6fa79775CCeF65ec",
+      "nativeSymbol": "HYPE",
+      "explorer": "https://hyperevmscan.io/",
+      "tokens": [
+        {
+          "symbol": "USDC",
+          "address": "0xb88339CB7199b77E23DB6E890353E22632Ba630f",
+          "decimals": 6,
+          "hubToken": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+          "routeToHub": true
+        }
+      ],
+      "directory": "https://docs.chain.link/ccip/directory/mainnet/chain/hyperliquid-mainnet"
+    }
+  ]
+}
