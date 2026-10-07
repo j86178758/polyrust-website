@@ -109,15 +109,17 @@ svg { display: block; }
 .strategy-card-illustrated .strategy-info h3 { color: #fff8fb; font-size: 40px; line-height: 1.15; margin: 12px 0 18px; }
 .strategy-card-illustrated .strategy-info p { color: #e0cbd5; font-size: 18px; line-height: 1.7; max-width: 600px; }
 .section-note { font-size: 10px; color: #87848e; max-width: 900px; margin-top: 28px; }
-.partners-layout, .transparency-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: center; }
+.partners-layout, .transparency-layout { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(48px, 6vw, 88px); align-items: center; }
 .partner-copy > p, .transparency-copy > p { max-width: 500px; margin-top: 24px; }
+.partner-copy h2 { max-width: 560px; font-size: clamp(46px, 4.4vw, 62px); line-height: 1.08; }
+.partner-copy > p { max-width: 540px; font-size: 15px; line-height: 1.75; }
 .partner-copy .partner-note { font-size: 11px; color: #85838f; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); }
-.levels-card { padding: 32px; border: 1px solid rgba(212, 67, 126, .24); border-radius: 12px; background: radial-gradient(ellipse at 100% 0%, rgba(119, 21, 62, .12), transparent 42%), #080609; transition: border-color .25s ease, box-shadow .25s ease, background-color .25s ease; }
+.levels-card { width: 100%; padding: 28px 30px; border: 1px solid rgba(212, 67, 126, .24); border-radius: 12px; background: radial-gradient(ellipse at 100% 0%, rgba(119, 21, 62, .12), transparent 42%), #080609; transition: border-color .25s ease, box-shadow .25s ease, background-color .25s ease; }
 .levels-card:hover { border-color: rgba(255, 65, 139, .62); box-shadow: 0 0 28px rgba(213, 31, 98, .12), inset 0 0 24px rgba(195, 28, 91, .045); }
-.levels-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 24px; }
+.levels-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 20px; }
 .levels-heading h3 { font-size: 16px; }
 .levels-heading > span { font-size: 10px; color: #d37b9e; white-space: nowrap; }
-.level-row { display: flex; align-items: center; gap: 16px; padding: 15px 12px; margin: 0 -12px; border-top: 1px solid rgba(255,255,255,.08); border-radius: 6px; transition: background .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.level-row { display: flex; align-items: center; gap: 14px; padding: 13px 12px; margin: 0 -12px; border-top: 1px solid rgba(255,255,255,.08); border-radius: 6px; transition: background .2s ease, border-color .2s ease, box-shadow .2s ease; }
 .level-row:hover { background: linear-gradient(90deg, rgba(224, 38, 108, .14), rgba(224, 38, 108, .035) 75%, transparent); border-top-color: rgba(255, 72, 142, .36); box-shadow: inset 2px 0 rgba(255, 72, 142, .8); }
 .level-num { font-size: 10px; color: #a15d78; transition: color .2s ease; }
 .level-name { font-size: 12px; width: 66px; }
@@ -183,6 +185,7 @@ svg { display: block; }
   .section-header > p { max-width: 500px; }
   .strategy-info { padding: 24px; }
   .partners-layout, .transparency-layout { grid-template-columns: 1fr; gap: 40px; }
+  .partner-copy h2 { max-width: 100%; font-size: clamp(40px, 8vw, 56px); }
   .partner-copy > p, .transparency-copy > p { max-width: 640px; }
   .editorial-section { padding-top: 80px; padding-bottom: 80px; }
   .footer { grid-template-columns: 1fr; }
@@ -237,6 +240,7 @@ svg { display: block; }
   .technology-features p { font-size: 11px; }
   .editorial-section { padding-top: 72px; padding-bottom: 72px; }
   h2 { font-size: 34px; }
+  .partner-copy h2 { font-size: 38px; }
   .section-header { margin-bottom: 40px; gap: 24px; }
   .section-header > p { font-size: 12px; }
   .strategy-grid { grid-template-columns: 1fr; gap: 20px; }
