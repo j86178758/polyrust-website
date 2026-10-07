@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
-import { inspirations, navItems, partners, socials, strategies } from './content'
+import { navItems, partners, socials, strategies } from './content'
 
 const videos = [
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_083515_290e5a10-0b95-41af-a5e2-32b6389baa4d.mp4',
@@ -139,7 +139,7 @@ function Header() {
     document.addEventListener('pointerdown', outside)
     return () => { document.removeEventListener('keydown', key); document.removeEventListener('pointerdown', outside) }
   }, [open])
-  return <header ref={ref} className="site-header"><div className="header-left"><Logo /><button type="button" className={`menu-toggle${open ? ' is-open' : ''}`} aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} aria-controls="navigation" onClick={() => setOpen(!open)}><span /><span /><span /></button><nav id="navigation" className={`main-nav${open ? ' is-open' : ''}`} aria-label="Main navigation" inert={!open}>{navItems.map(([label, id]) => <a key={id} href={`#${id}`} onClick={() => setOpen(false)}><Scramble text={label} /></a>)}</nav></div><a className="header-action" href="#technology">Explore platform</a></header>
+  return <header ref={ref} className="site-header"><div className="header-left"><Logo /><button type="button" className={`menu-toggle${open ? ' is-open' : ''}`} aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} aria-controls="navigation" onClick={() => setOpen(!open)}><span /><span /><span /></button><nav id="navigation" className={`main-nav${open ? ' is-open' : ''}`} aria-label="Main navigation" inert={!open}>{navItems.map(([label, id]) => <a key={id} href={`#${id}`} onClick={() => setOpen(false)}><Scramble text={label} /></a>)}</nav></div><a className="header-action" href="#technology">Connect wallet</a></header>
 }
 
 function Hero({ paused }: { paused: boolean }) {
@@ -180,15 +180,11 @@ function Transparency() {
   return <section className="editorial-section" id="transparency"><div className="transparency-layout"><Reveal className="transparency-copy"><h2>Transparency & Web3</h2><p>POLYRUST is built on Web3 principles, featuring direct interaction via crypto wallets and logic defined by smart contracts.</p><p>Key operational parameters are embedded in the code and can be verified directly on the blockchain. Users can independently check the contract address, its code, and the transaction history.</p><p>Transparency begins with the ability to verify the system independently.</p><p className="verification-note">{features.join(' · ')}</p></Reveal><Reveal className="architecture-stack">{features.map((feature, i) => <article className="architecture-layer" key={feature}><span>0{i + 1} / WEB3</span><h3>{feature}</h3></article>)}</Reveal></div></section>
 }
 
-function Inspirations() {
-  return <section className="editorial-section inspirations-section" id="inspirations"><Reveal className="section-header"><div><span className="eyebrow">Ideas that inform us</span><h2>Markets are<br />collective intelligence.</h2></div><p>The research, analytics and platforms that shape how we think about information and prediction.</p></Reveal><div className="inspiration-grid">{inspirations.map((item, i) => <Reveal key={item.name}><article className="inspiration-card"><span className="inspiration-index">0{i + 1}</span><h3>{item.name}</h3><div className="inspiration-role">{item.role}</div><p>{item.text}</p></article></Reveal>)}</div></section>
-}
-
 function Footer({ paused }: { paused: boolean }) {
   return <footer className="footer"><div className="scene footer-visual"><VideoBackground index={4} paused={paused} /><div className="footer-visual-label"><Mark /><span>Independent thinking.<br />Built on open systems.</span></div></div><div className="footer-content"><div><Logo /><p className="footer-description">Algorithmic intelligence for prediction markets. Built with Rust. Connected to Polymarket.</p><nav className="footer-nav" aria-label="Footer navigation">{navItems.map(([label, id]) => <a key={id} href={`#${id}`}>{label}</a>)}</nav><div className="social-links">{socials.map(social => <a href={social.href} key={social.href} target="_blank" rel="noopener noreferrer">{social.label}</a>)}</div></div><div className="footer-bottom"><span>© 2026 POLYRUST</span><a href="#top">Back to top</a></div></div></footer>
 }
 
 export default function App() {
   const paused = false
-  return <><a className="skip-link" href="#about">Skip introduction</a><Header /><main><Hero paused={paused} /><About paused={paused} /><Capabilities paused={paused} /><Technology paused={paused} /><Strategies /><Partners /><Transparency /><Inspirations /></main><Footer paused={paused} /></>
+  return <><a className="skip-link" href="#about">Skip introduction</a><Header /><main><Hero paused={paused} /><About paused={paused} /><Capabilities paused={paused} /><Technology paused={paused} /><Strategies /><Partners /><Transparency /></main><Footer paused={paused} /></>
 }

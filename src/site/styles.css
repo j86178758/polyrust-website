@@ -128,6 +128,7 @@ svg { display: block; }
 .partners-layout, .transparency-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: center; }
 .partner-copy > p, .transparency-copy > p { max-width: 500px; margin-top: 24px; }
 .partner-copy .partner-note, .transparency-copy .verification-note { font-size: 11px; color: #85838f; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); }
+.transparency-copy .verification-note { color: #d28ba7; border-top-color: rgba(255, 72, 142, .34); }
 .levels-card { padding: 32px; border: 1px solid rgba(212, 67, 126, .24); border-radius: 12px; background: radial-gradient(ellipse at 100% 0%, rgba(119, 21, 62, .12), transparent 42%), #080609; transition: border-color .25s ease, box-shadow .25s ease, background-color .25s ease; }
 .levels-card:hover { border-color: rgba(255, 65, 139, .62); box-shadow: 0 0 28px rgba(213, 31, 98, .12), inset 0 0 24px rgba(195, 28, 91, .045); }
 .levels-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 24px; }
@@ -143,17 +144,13 @@ svg { display: block; }
 .level-row:hover .level-num, .level-row:hover .level-reward { color: #ff83b3; }
 .level-row:hover .level-track i { filter: brightness(1.2); box-shadow: 0 0 10px rgba(255, 63, 135, .65); }
 .architecture-stack { display: grid; gap: 16px; }
-.architecture-layer { border: 1px solid var(--border); border-radius: 8px; padding: 24px 28px; background: #08080a; }
-.architecture-layer > span { font-size: 10px; color: #85838f; }
-.architecture-layer h3 { font-size: 20px; margin-top: 12px; }
+.architecture-layer { position: relative; overflow: hidden; border: 1px solid rgba(208, 65, 121, .24); border-radius: 12px; padding: 24px 28px; background: linear-gradient(110deg, rgba(95, 18, 49, .16), transparent 72%), #080609; transition: border-color .25s ease, background .25s ease, box-shadow .25s ease, transform .25s ease; }
+.architecture-layer::before { content: ''; position: absolute; top: -1px; left: 28px; width: 44px; height: 2px; background: linear-gradient(90deg, #b3235c, #ff6ca5); box-shadow: 0 0 10px rgba(255, 66, 137, .5); }
+.architecture-layer:hover { transform: translateY(-2px); border-color: rgba(255, 72, 142, .62); background: linear-gradient(110deg, rgba(130, 24, 66, .25), rgba(20, 7, 13, .7) 72%), #080609; box-shadow: 0 8px 28px rgba(205, 32, 98, .12), inset 0 0 22px rgba(210, 35, 100, .055); }
+.architecture-layer > span { font-size: 10px; color: #c37996; }
+.architecture-layer h3 { font-size: 20px; margin-top: 12px; transition: color .25s ease; }
+.architecture-layer:hover h3 { color: #ffe5ef; }
 .architecture-layer p { font-size: 12px; margin-top: 8px; }
-.inspiration-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.inspiration-grid > .reveal { display: flex; }
-.inspiration-card { padding: 32px; width: 100%; border: 1px solid var(--border); border-radius: 8px; background: #08080a; }
-.inspiration-index { font-size: 10px; color: #65636f; }
-.inspiration-card h3 { font-size: 24px; margin: 36px 0 12px; }
-.inspiration-role { font-size: 10px; color: #d0ccd8; padding-bottom: 24px; margin-bottom: 24px; border-bottom: 1px solid var(--border); }
-.inspiration-card p { font-size: 12px; }
 .footer { display: grid; grid-template-columns: 1fr 1fr; margin-top: 40px; border-top: 1px solid var(--border); }
 .footer-visual { min-height: 560px; }
 .footer-visual .scene-overlay { background: linear-gradient(0deg, rgba(0,0,0,.8), rgba(0,0,0,.1)); }
@@ -184,9 +181,6 @@ svg { display: block; }
   .hero-right h2 { font-size: 5.5vw; }
   .partners-layout, .transparency-layout { gap: 48px; }
   .capability-grid { gap: 32px; }
-  .inspiration-card { padding: 24px; }
-  .inspiration-card h3 { font-size: 20px; }
-  .inspiration-role { min-height: 60px; }
   .technology-features, .engine-flow { gap: 24px; }
   .footer-content { padding-left: 32px; padding-right: 32px; }
 }
@@ -216,9 +210,6 @@ svg { display: block; }
   .partners-layout, .transparency-layout { grid-template-columns: 1fr; gap: 40px; }
   .partner-copy > p, .transparency-copy > p { max-width: 640px; }
   .editorial-section { padding-top: 80px; padding-bottom: 80px; }
-  .inspiration-grid { grid-template-columns: 1fr; gap: 16px; }
-  .inspiration-card h3 { margin-top: 20px; font-size: 24px; }
-  .inspiration-role { min-height: 0; }
   .footer { grid-template-columns: 1fr; }
   .footer-visual { min-height: 360px; }
   .footer-content { padding: 40px 28px; }
@@ -301,7 +292,6 @@ svg { display: block; }
   .level-name { font-size: 11px; width: 60px; }
   .architecture-layer { padding: 24px; }
   .architecture-layer h3 { font-size: 18px; }
-  .inspiration-card { padding: 24px; }
   .footer { margin-top: 24px; }
   .footer-visual { min-height: 300px; }
   .footer-visual-label { left: 24px; bottom: 32px; font-size: 12px; }

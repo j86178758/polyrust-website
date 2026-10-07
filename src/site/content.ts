@@ -1,6 +1,6 @@
 export const navItems = [
   ['About', 'about'], ['Technology', 'technology'], ['Markets', 'strategies'],
-  ['Partners', 'partners'], ['Transparency', 'transparency'], ['Inspirations', 'inspirations'],
+  ['Partners', 'partners'], ['Transparency', 'transparency'],
 ] as const
 
 export const socials = [
@@ -17,9 +17,3 @@ export const strategies = [
 ] as const
 
 export const partners = [8, 6, 4, 2, .5, .5, .5, .5, .5, .5]
-
-export const inspirations = [
-  { name: 'Robin Hanson', role: 'Prediction market theory', text: 'An economist and researcher whose work explores how markets aggregate dispersed information into forecasts.' },
-  { name: 'Primo Data', role: 'Market analytics', text: 'An independent analytics project providing tools and insights for exploring Polymarket activity.' },
-  { name: 'Shayne Coplan', role: 'Polymarket founder', text: 'Founder of Polymarket, bringing blockchain-based prediction markets to a broader audience.' },
-] as const
