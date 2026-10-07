@@ -1,3 +1,5 @@
+export const projectName = 'ProjName'
+
 export const navItems = [
   ['About', 'about'], ['Technology', 'technology'], ['Markets', 'strategies'],
   ['Partners', 'partners'], ['Transparency', 'transparency'],
@@ -10,10 +12,10 @@ export const socials = [
 ] as const
 
 export const strategies = [
-  { name: 'Sports Bot', kind: 'sports', text: 'Responds to changing outcome probabilities and trading activity in sports prediction markets.', focus: 'Focus: probabilities and market activity' },
-  { name: 'Crypto Bot', kind: 'crypto', text: 'Analyzes price movements, volatility and short-term signals in cryptocurrency prediction markets.', focus: 'Focus: momentum and volatility' },
-  { name: 'Politics Bot', kind: 'politics', text: 'Evaluates how new information shifts probabilities in political prediction markets.', focus: 'Focus: information and probability shifts' },
-  { name: 'World events Bot', kind: 'world', text: 'Tracks emerging market signals as global developments change expectations and probabilities.', focus: 'Focus: events and changing expectations' },
+  { name: 'Sports Bot', kind: 'sports', text: 'Responds to changing outcome probabilities and trading activity in sports prediction markets.' },
+  { name: 'Crypto Bot', kind: 'crypto', text: 'Analyzes price movements, volatility and short-term signals in cryptocurrency prediction markets.' },
+  { name: 'Politics Bot', kind: 'politics', text: 'Evaluates how new information shifts probabilities in political prediction markets.' },
+  { name: 'World events Bot', kind: 'world', text: 'Tracks emerging market signals as global developments change expectations and probabilities.' },
 ] as const
 
 export const partners = [8, 6, 4, 2, .5, .5, .5, .5, .5, .5]
