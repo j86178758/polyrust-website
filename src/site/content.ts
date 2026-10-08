@@ -1,4 +1,6 @@
 export const projectName = 'ProjName'
+export const projectIcon = 'polymer'
+export const GR = 'RUST-EXEC'
 
 export const navItems = [
   ['About', 'about'], ['Technology', 'technology'], ['Markets', 'strategies'],

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
-import { navItems, partners, projectName, socials, strategies } from './content'
+import { GR, navItems, partners, projectIcon, projectName, socials, strategies } from './content'
 
 const videos = [
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_083515_290e5a10-0b95-41af-a5e2-32b6389baa4d.mp4',
@@ -22,7 +22,7 @@ function useReducedMotion() {
 }
 
 function Mark() {
-  return <svg className="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M15 52V12h22c11 0 18 7 18 18s-7 18-18 18H27v4H15zm12-16h10c4 0 7-2 7-6s-3-6-7-6H27v12z" fill="currentColor" /></svg>
+  return <span className="brand-mark" aria-hidden="true">{projectIcon}</span>
 }
 
 function Logo() {
@@ -139,11 +139,11 @@ function Header() {
     document.addEventListener('pointerdown', outside)
     return () => { document.removeEventListener('keydown', key); document.removeEventListener('pointerdown', outside) }
   }, [open])
-  return <header ref={ref} className="site-header"><div className="header-left"><Logo /><button type="button" className={`menu-toggle${open ? ' is-open' : ''}`} aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} aria-controls="navigation" onClick={() => setOpen(!open)}><span /><span /><span /></button><nav id="navigation" className={`main-nav${open ? ' is-open' : ''}`} aria-label="Main navigation" inert={!open}>{navItems.map(([label, id]) => <a key={id} href={`#${id}`} onClick={() => setOpen(false)}><Scramble text={label} /></a>)}</nav></div><a className="header-action" href="#technology">Connect wallet</a></header>
+  return <header ref={ref} className="site-header"><div className="header-left"><button type="button" className={`menu-toggle${open ? ' is-open' : ''}`} aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} aria-controls="navigation" onClick={() => setOpen(!open)}><span /><span /><span /></button><Logo /><nav id="navigation" className={`main-nav${open ? ' is-open' : ''}`} aria-label="Main navigation" inert={!open}>{navItems.map(([label, id]) => <a key={id} href={`#${id}`} onClick={() => setOpen(false)}><Scramble text={label} /></a>)}</nav></div><a className="header-action" href="#technology">Connect wallet</a></header>
 }
 
 function Hero({ paused }: { paused: boolean }) {
-  return <section className="scene hero" id="top"><VideoBackground index={0} scrub paused={paused} /><div className="dot-grid" aria-hidden="true" /><div className="hero-watermark" aria-hidden="true">{projectName}</div><div className="scene-content hero-content"><div className="hero-bottom"><div className="hero-copy"><h1><Scramble text="Market" delay={800} /><br /><Scramble text="Intelligence" delay={1000} /></h1><p>Real-time market analysis, adaptive trading strategies and Web3 infrastructure. One platform for a world of changing probabilities.</p><div className="hero-actions"><a className="button button-primary" href="#technology">Meet GEM RUST</a><a className="button button-ghost" href="#strategies">Explore markets</a></div></div><div className="hero-right"><h2><Scramble text="One engine." delay={1200} /><br /><Scramble text="Every signal." delay={1400} /></h2></div></div></div></section>
+  return <section className="scene hero" id="top"><VideoBackground index={0} scrub paused={paused} /><div className="dot-grid" aria-hidden="true" /><div className="hero-watermark" aria-hidden="true">{projectName}</div><div className="scene-content hero-content"><div className="hero-bottom"><div className="hero-copy"><h1><Scramble text="Market" delay={800} /><br /><Scramble text="Intelligence" delay={1000} /></h1><p>Real-time market analysis, adaptive trading strategies and Web3 infrastructure. One platform for a world of changing probabilities.</p><div className="hero-actions"><a className="button button-primary" href="#technology">Meet {GR}</a><a className="button button-ghost" href="#strategies">Explore markets</a></div></div><div className="hero-right"><h2><Scramble text="One engine." delay={1200} /><br /><Scramble text="Every signal." delay={1400} /></h2></div></div></div></section>
 }
 
 function About({ paused }: { paused: boolean }) {
@@ -151,7 +151,7 @@ function About({ paused }: { paused: boolean }) {
 }
 
 function Capabilities({ paused }: { paused: boolean }) {
-  const items = [['04', 'Distinct markets', 'Sports, crypto, politics and world events.'], ['01', 'Adaptive engine', 'GEM RUST connects analysis, strategy and execution.'], ['Web3', 'Wallet-based access', 'Interaction through a crypto wallet, without a traditional account.']]
+  const items = [['04', 'Distinct markets', 'Sports, crypto, politics and world events.'], ['One', 'Adaptive engine', `${GR} connects analysis, strategy and execution.`], ['Web3', 'Wallet-based access', 'Interaction through a crypto wallet, without a traditional account.']]
   return <section className="scene capabilities-section" aria-label="Platform at a glance"><VideoBackground index={2} paused={paused} /><div className="scene-content capabilities-content"><Reveal><div className="capability-grid">{items.map(([value, title, text]) => <article key={title}><div className="capability-value">{value}</div><h3>{title}</h3><p>{text}</p></article>)}</div></Reveal></div></section>
 }
 
@@ -175,13 +175,34 @@ function Partners() {
   return <section className="editorial-section partners-section" id="partners"><div className="partners-layout"><Reveal className="partner-copy"><h2>Built to grow.<br />Together.</h2><p>A five-level referral program with all levels available from the start.</p><p>Rewards are calculated from the investment of a partner at the corresponding level. They are funded by a dedicated partner balance, replenished from a portion of trading bot profits.</p><p className="partner-note">Referral percentages describe the program structure, not investment returns.</p></Reveal><Reveal><div className="levels-card"><div className="levels-heading"><h3>Referral structure</h3><span>5 levels</span></div>{partners.map((reward, i) => <div className="level-row" key={i}><span className="level-num">{String(i + 1).padStart(2, '0')}</span><span className="level-name">Level {i + 1}</span><span className="level-track" aria-hidden="true"><i style={{ width: `${reward / 6 * 100}%` }} /></span><span className="level-reward">{reward}%</span></div>)}</div></Reveal></div></section>
 }
 
+function VerificationVisual() {
+  const nodes = [[110, 115], [300, 55], [490, 115], [490, 325], [300, 385], [110, 325]]
+  return <div className="verification-visual" aria-hidden="true">
+    <svg viewBox="0 0 600 440" focusable="false">
+      <g className="verification-orbits">
+        <circle cx="300" cy="220" r="105" />
+        <circle cx="300" cy="220" r="155" />
+        <ellipse cx="300" cy="220" rx="240" ry="195" />
+      </g>
+      <path className="verification-perimeter" d="M110 115 300 55 490 115 490 325 300 385 110 325Z" />
+      {nodes.map(([x, y], i) => <g key={i}>
+        <path className="verification-link" d={`M300 220 L${x} ${y}`} />
+        <path className="verification-signal" pathLength="100" d={`M${x} ${y} L300 220`} style={{ animationDelay: `${i * -.8}s` }} />
+        <circle className="verification-node-halo" cx={x} cy={y} r="15" style={{ animationDelay: `${i * -.8}s` }} />
+        <circle className="verification-node" cx={x} cy={y} r="5" />
+      </g>)}
+      <circle className="verification-core-ring" cx="300" cy="220" r="55" />
+    </svg>
+    <div className="verification-core"><Mark /></div>
+  </div>
+}
+
 function Transparency() {
-  const features = ['On-Chain Verification', 'Transparent Logic', 'Verifiable Transactions']
-  return <section className="editorial-section" id="transparency"><div className="transparency-layout"><Reveal className="transparency-copy"><h2>Transparency & Web3</h2><p>{projectName} is built on Web3 principles, featuring direct interaction via crypto wallets and logic defined by smart contracts.</p><p>Key operational parameters are embedded in the code and can be verified directly on the blockchain. Users can independently check the contract address, its code, and the transaction history.</p><p>Transparency begins with the ability to verify the system independently.</p></Reveal><Reveal className="architecture-stack">{features.map(feature => <article className="architecture-layer" key={feature}><h3>{feature}</h3></article>)}</Reveal></div></section>
+  return <section className="editorial-section" id="transparency"><div className="transparency-layout"><Reveal className="transparency-copy"><h2>Transparency & Web3</h2><p>{projectName} is built on Web3 principles, featuring direct interaction via crypto wallets and logic defined by smart contracts.</p><p>Key operational parameters are embedded in the code and can be verified directly on the blockchain. Users can independently check the contract address, its code, and the transaction history.</p><p className="transparency-note">Transparency begins with the ability to verify the system independently.</p></Reveal><Reveal><VerificationVisual /></Reveal></div></section>
 }
 
 function Footer({ paused }: { paused: boolean }) {
-  return <footer className="footer"><div className="scene footer-visual"><VideoBackground index={4} paused={paused} /></div><div className="footer-content"><div className="footer-lockup"><div className="footer-brand"><Logo /><p className="footer-description">Algorithmic intelligence for prediction markets.</p><div className="social-links">{socials.map(social => <a href={social.href} key={social.href} target="_blank" rel="noopener noreferrer">{social.label}</a>)}</div></div><div className="footer-bottom">© 2026 {projectName}</div></div></div></footer>
+  return <footer className="footer"><div className="scene footer-visual"><VideoBackground index={4} paused={paused} /></div><div className="footer-content"><div className="footer-lockup"><div className="footer-brand"><Logo /><p className="footer-description">Algorithmic intelligence for prediction markets.</p><div className="social-links">{socials.map(social => <a href={social.href} key={social.href} target="_blank" rel="noopener noreferrer">{social.label}</a>)}</div></div></div><div className="footer-bottom">© 2026 {projectName}</div></div></footer>
 }
 
 export default function App() {
