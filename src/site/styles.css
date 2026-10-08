@@ -145,7 +145,7 @@ svg { display: block; }
 .level-track i { display: block; height: 100%; background: linear-gradient(90deg, #bd285f, #ff6ba4); box-shadow: 0 0 7px rgba(255, 63, 135, .34); transition: box-shadow .2s ease, filter .2s ease; }
 .level-reward { width: 40px; text-align: right; font-size: 12px; }
 .verification-visual { position: relative; width: 70%; margin-inline: auto; border-radius: 20px; overflow: hidden; background: #000; }
-.verification-visual video { display: block; width: 100%; height: auto; mix-blend-mode: screen; -webkit-mask-image: radial-gradient(ellipse closest-side at center, #000 65%, transparent 100%); mask-image: radial-gradient(ellipse closest-side at center, #000 65%, transparent 100%); pointer-events: none; }
+.verification-visual video { display: block; width: 100%; height: auto; filter: grayscale(1); mix-blend-mode: screen; -webkit-mask-image: radial-gradient(ellipse closest-side at center, #000 65%, transparent 100%); mask-image: radial-gradient(ellipse closest-side at center, #000 65%, transparent 100%); pointer-events: none; }
 
 @keyframes verification-orbit { to { transform: rotate(360deg); } }
 @keyframes verification-signal { from { stroke-dashoffset: 100; opacity: 0; } 15%, 80% { opacity: .85; } to { stroke-dashoffset: 0; opacity: 0; } }
