@@ -168,28 +168,29 @@ const strategyArtwork: Record<(typeof strategies)[number]['kind'], string> = {
 }
 
 function Strategies() {
-  return <section className="editorial-section" id="strategies"><Reveal className="section-header"><div><h2>Not every market<br />moves the same.</h2></div><p>Four purpose-built approaches. Each responds to the information, probabilities and activity of its own market.</p></Reveal><div className="strategy-grid">{strategies.map(strategy => <Reveal key={strategy.kind}><article className="strategy-card strategy-card-illustrated"><div className="strategy-visual" aria-hidden="true"><img src={strategyArtwork[strategy.kind]} alt="" /></div><div className="strategy-info"><h3>{strategy.name}</h3><p>{strategy.text}</p></div></article></Reveal>)}</div></section>
+  return <section className="editorial-section strategies-section" id="strategies"><div className="strategies-layout"><Reveal className="strategies-copy"><h2>Different markets.</h2><p>Four purpose-built approaches. Each responds to the information, probabilities and activity of its own market.</p><p>Analysis, risk filters and execution adapt to the rhythm of each category—so signals stay in context instead of being flattened into one generic playbook.</p></Reveal><div className="strategy-masonry">{strategies.map(strategy => <Reveal key={strategy.kind}><article className="strategy-card strategy-card-illustrated"><div className="strategy-visual"><img src={strategyArtwork[strategy.kind]} alt="" /><div className="strategy-scrim" aria-hidden="true" /><div className="strategy-info"><h3>{strategy.name}</h3><p>{strategy.text}</p></div></div></article></Reveal>)}</div></div></section>
 }
 
 function Partners() {
-  return <section className="editorial-section partners-section" id="partners"><div className="partners-layout"><Reveal className="partner-copy"><h2>Built to grow.<br />Together.</h2><p>A ten-level referral program with all levels available from the start.</p><p>Rewards are calculated from the investment of a partner at the corresponding level. They are funded by a dedicated partner balance, replenished from a portion of trading bot profits.</p><p className="partner-note">Referral percentages describe the program structure, not investment returns.</p></Reveal><Reveal><div className="levels-card"><div className="levels-heading"><h3>Referral structure</h3><span>10 levels</span></div>{partners.map((reward, i) => <div className="level-row" key={i}><span className="level-num">{String(i + 1).padStart(2, '0')}</span><span className="level-name">Level {i + 1}</span><span className="level-track" aria-hidden="true"><i style={{ width: `${reward / 6 * 100}%` }} /></span><span className="level-reward">{reward}%</span></div>)}</div></Reveal></div></section>
+  return <section className="editorial-section partners-section" id="partners"><div className="partners-layout"><Reveal className="partner-copy"><h2>Built to grow.<br />Together.</h2><p>A ten-level referral program with all levels available from the start.</p><p>Rewards are calculated from the investment of a partner at the corresponding level. They are funded by a dedicated partner balance, replenished from a portion of trading profits.</p><p className="partner-note">Referral percentages describe the program structure, not investment returns.</p></Reveal><Reveal><div className="levels-card"><div className="levels-heading"><h3>Referral structure</h3><span>10 levels</span></div>{partners.map((reward, i) => <div className="level-row" key={i}><span className="level-num">{String(i + 1).padStart(2, '0')}</span><span className="level-name">Level {i + 1}</span><span className="level-track" aria-hidden="true"><i style={{ width: `${reward / 6 * 100}%` }} /></span><span className="level-reward">{reward}%</span></div>)}</div></Reveal></div></section>
 }
 
 function VerificationVisual() {
   return <div className="verification-visual" aria-hidden="true">
     <div className="verification-jelly-container">
-      <img src="PINS/cube.gif" alt="" className="verification-jelly" />
-      <div className="verification-jelly-overlay"></div>
+      <img src="/d2.gif" alt="" className="verification-jelly verification-jelly--rose" />
+      <img src="/d2.gif" alt="" className="verification-jelly verification-jelly--violet" />
+      <img src="/d2.gif" alt="" className="verification-jelly verification-jelly--lilac" />
     </div>
   </div>
 }
 
 function Transparency() {
-  return <section className="editorial-section" id="transparency"><div className="transparency-layout"><Reveal className="transparency-copy"><h2>Transparency & Web3</h2><p>{projectName} is built on Web3 principles, featuring direct interaction via crypto wallets and logic defined by smart contracts.</p><p>Key operational parameters are embedded in the code and can be verified directly on the blockchain. Users can independently check the contract address, its code, and the transaction history.</p><p className="transparency-note">Transparency begins with the ability to verify the system independently.</p></Reveal><Reveal><VerificationVisual /></Reveal></div></section>
+  return <section className="editorial-section" id="transparency"><div className="transparency-layout"><Reveal><VerificationVisual /></Reveal><Reveal className="transparency-copy"><h2>Transparency & Web3</h2><p>{projectName} is built on Web3 principles, featuring direct interaction via crypto wallets and logic defined by smart contracts.</p><p>Key operational parameters are embedded in the code and can be verified directly on the blockchain. Users can independently check the contract address, its code, and the transaction history.</p><p className="transparency-note">Transparency begins with the ability to verify the system independently.</p></Reveal></div></section>
 }
 
 function Footer({ paused }: { paused: boolean }) {
-  return <footer className="footer"><div className="scene footer-visual"><VideoBackground index={4} paused={paused} /></div><div className="footer-content"><div className="footer-lockup"><div className="footer-brand"><Logo /><p className="footer-description">Algorithmic intelligence for prediction markets.</p><div className="social-links">{socials.map(social => <a href={social.href} key={social.href} target="_blank" rel="noopener noreferrer">{social.label}</a>)}</div></div></div><div className="footer-bottom">© 2026 {projectName}</div></div></footer>
+  return <footer className="footer"><div className="footer-content"><div className="footer-lockup"><div className="footer-brand"><Logo /><p className="footer-description">Algorithmic intelligence for prediction markets.</p><div className="social-links">{socials.map(social => <a href={social.href} key={social.href} target="_blank" rel="noopener noreferrer">{social.label}</a>)}</div></div></div><div className="footer-bottom">© 2026 {projectName}</div></div><div className="scene footer-visual"><VideoBackground index={4} paused={paused} /></div></footer>
 }
 
 export default function App() {
