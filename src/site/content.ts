@@ -20,4 +20,4 @@ export const strategies = [
   { name: 'World events Bot', kind: 'world', text: 'Tracks emerging market signals as global developments change expectations and probabilities.' },
 ] as const
 
-export const partners = [6, 4, 3, 2, 1]
+export const partners = [6, 4, 3, 2, 1, 0.5, 0.5, 0.5, 0.5, 0.5]

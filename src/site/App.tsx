@@ -172,28 +172,15 @@ function Strategies() {
 }
 
 function Partners() {
-  return <section className="editorial-section partners-section" id="partners"><div className="partners-layout"><Reveal className="partner-copy"><h2>Built to grow.<br />Together.</h2><p>A five-level referral program with all levels available from the start.</p><p>Rewards are calculated from the investment of a partner at the corresponding level. They are funded by a dedicated partner balance, replenished from a portion of trading bot profits.</p><p className="partner-note">Referral percentages describe the program structure, not investment returns.</p></Reveal><Reveal><div className="levels-card"><div className="levels-heading"><h3>Referral structure</h3><span>5 levels</span></div>{partners.map((reward, i) => <div className="level-row" key={i}><span className="level-num">{String(i + 1).padStart(2, '0')}</span><span className="level-name">Level {i + 1}</span><span className="level-track" aria-hidden="true"><i style={{ width: `${reward / 6 * 100}%` }} /></span><span className="level-reward">{reward}%</span></div>)}</div></Reveal></div></section>
+  return <section className="editorial-section partners-section" id="partners"><div className="partners-layout"><Reveal className="partner-copy"><h2>Built to grow.<br />Together.</h2><p>A ten-level referral program with all levels available from the start.</p><p>Rewards are calculated from the investment of a partner at the corresponding level. They are funded by a dedicated partner balance, replenished from a portion of trading bot profits.</p><p className="partner-note">Referral percentages describe the program structure, not investment returns.</p></Reveal><Reveal><div className="levels-card"><div className="levels-heading"><h3>Referral structure</h3><span>10 levels</span></div>{partners.map((reward, i) => <div className="level-row" key={i}><span className="level-num">{String(i + 1).padStart(2, '0')}</span><span className="level-name">Level {i + 1}</span><span className="level-track" aria-hidden="true"><i style={{ width: `${reward / 6 * 100}%` }} /></span><span className="level-reward">{reward}%</span></div>)}</div></Reveal></div></section>
 }
 
 function VerificationVisual() {
-  const nodes = [[110, 115], [300, 55], [490, 115], [490, 325], [300, 385], [110, 325]]
   return <div className="verification-visual" aria-hidden="true">
-    <svg viewBox="0 0 600 440" focusable="false">
-      <g className="verification-orbits">
-        <circle cx="300" cy="220" r="105" />
-        <circle cx="300" cy="220" r="155" />
-        <ellipse cx="300" cy="220" rx="240" ry="195" />
-      </g>
-      <path className="verification-perimeter" d="M110 115 300 55 490 115 490 325 300 385 110 325Z" />
-      {nodes.map(([x, y], i) => <g key={i}>
-        <path className="verification-link" d={`M300 220 L${x} ${y}`} />
-        <path className="verification-signal" pathLength="100" d={`M${x} ${y} L300 220`} style={{ animationDelay: `${i * -.8}s` }} />
-        <circle className="verification-node-halo" cx={x} cy={y} r="15" style={{ animationDelay: `${i * -.8}s` }} />
-        <circle className="verification-node" cx={x} cy={y} r="5" />
-      </g>)}
-      <circle className="verification-core-ring" cx="300" cy="220" r="55" />
-    </svg>
-    <div className="verification-core"><Mark /></div>
+    <div className="verification-jelly-container">
+      <img src="PINS/cube.gif" alt="" className="verification-jelly" />
+      <div className="verification-jelly-overlay"></div>
+    </div>
   </div>
 }
 
