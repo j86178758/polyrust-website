@@ -154,7 +154,7 @@ function Partners() {
 }
 
 function VerificationVisual() {
-  return <div className="verification-visual" aria-hidden="true"><video src="/yellowlamp.mp4" autoPlay muted loop playsInline preload="metadata" tabIndex={-1} /></div>
+  return <div className="verification-visual" aria-hidden="true"><video src="/balls.mp4" autoPlay muted loop playsInline preload="metadata" tabIndex={-1} /></div>
 }
 
 function Transparency() {
