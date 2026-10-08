@@ -29,35 +29,6 @@ function Logo() {
   return <a className="logo" href="#top" aria-label={`${projectName} home`}><Mark /><span>{projectName}</span></a>
 }
 
-function Scramble({ text, delay = 0 }: { text: string; delay?: number }) {
-  const [display, setDisplay] = useState(text)
-  const [hovered, setHovered] = useState(false)
-  const reduced = useReducedMotion()
-  const ref = useRef<HTMLSpanElement>(null)
-  const [visible, setVisible] = useState(false)
-  useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      if (entries.some(entry => entry.isIntersecting)) { setVisible(true); observer.disconnect() }
-    })
-    if (ref.current) observer.observe(ref.current)
-    return () => observer.disconnect()
-  }, [])
-  useEffect(() => {
-    if (!visible || reduced) { setDisplay(text); return }
-    let interval: ReturnType<typeof setInterval> | undefined
-    const timeout = setTimeout(() => {
-      let cursor = 0
-      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
-      interval = setInterval(() => {
-        cursor += hovered ? .25 : .5
-        setDisplay(text.split('').map((char, index) => char === ' ' || index < cursor ? char : chars[Math.floor(Math.random() * chars.length)]).join(''))
-        if (cursor >= text.length) clearInterval(interval)
-      }, 25)
-    }, hovered ? 0 : delay)
-    return () => { clearTimeout(timeout); clearInterval(interval); setDisplay(text) }
-  }, [visible, hovered, reduced, text, delay])
-  return <span ref={ref} className="scramble" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}><span className="sr-only">{text}</span><span aria-hidden="true">{display}</span></span>
-}
 
 function Reveal({ children, className = '' }: { children: ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null)
@@ -139,11 +110,11 @@ function Header() {
     document.addEventListener('pointerdown', outside)
     return () => { document.removeEventListener('keydown', key); document.removeEventListener('pointerdown', outside) }
   }, [open])
-  return <header ref={ref} className="site-header"><div className="header-left"><button type="button" className={`menu-toggle${open ? ' is-open' : ''}`} aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} aria-controls="navigation" onClick={() => setOpen(!open)}><span /><span /><span /></button><Logo /><nav id="navigation" className={`main-nav${open ? ' is-open' : ''}`} aria-label="Main navigation" inert={!open}>{navItems.map(([label, id]) => <a key={id} href={`#${id}`} onClick={() => setOpen(false)}><Scramble text={label} /></a>)}</nav></div><a className="header-action" href="#technology">Connect wallet</a></header>
+  return <header ref={ref} className="site-header"><div className="header-left"><button type="button" className={`menu-toggle${open ? ' is-open' : ''}`} aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} aria-controls="navigation" onClick={() => setOpen(!open)}><span /><span /><span /></button><Logo /><nav id="navigation" className={`main-nav${open ? ' is-open' : ''}`} aria-label="Main navigation" inert={!open}>{navItems.map(([label, id]) => <a key={id} href={`#${id}`} onClick={() => setOpen(false)}>{label}</a>)}</nav></div><a className="header-action" href="#technology">Connect wallet</a></header>
 }
 
 function Hero({ paused }: { paused: boolean }) {
-  return <section className="scene hero" id="top"><VideoBackground index={0} scrub paused={paused} /><div className="dot-grid" aria-hidden="true" /><div className="hero-watermark" aria-hidden="true">{projectName}</div><div className="scene-content hero-content"><div className="hero-bottom"><div className="hero-copy"><h1><Scramble text="Market" delay={800} /><br /><Scramble text="Intelligence" delay={1000} /></h1><p>Real-time market analysis, adaptive trading strategies and Web3 infrastructure. One platform for a world of changing probabilities.</p><div className="hero-actions"><a className="button button-primary" href="#technology">Meet {GR}</a><a className="button button-ghost" href="#strategies">Explore markets</a></div></div><div className="hero-right"><h2><Scramble text="One engine." delay={1200} /><br /><Scramble text="Every signal." delay={1400} /></h2></div></div></div></section>
+  return <section className="scene hero" id="top"><VideoBackground index={0} scrub paused={paused} /><div className="dot-grid" aria-hidden="true" /><div className="hero-watermark" aria-hidden="true">{projectName}</div><div className="scene-content hero-content"><div className="hero-bottom"><div className="hero-copy"><h1>Market<br />Intelligence</h1><p>Real-time market analysis, adaptive trading strategies and Web3 infrastructure. One platform for a world of changing probabilities.</p><div className="hero-actions"><a className="button button-primary" href="#technology">Meet {GR}</a><a className="button button-ghost" href="#strategies">Explore markets</a></div></div><div className="hero-right"><h2><span className="hero-line">One engine.</span><br /><span className="hero-line">Every signal.</span></h2></div></div></div></section>
 }
 
 function About({ paused }: { paused: boolean }) {
@@ -151,13 +122,20 @@ function About({ paused }: { paused: boolean }) {
 }
 
 function Capabilities({ paused }: { paused: boolean }) {
-  const items = [['04', 'Distinct markets', 'Sports, crypto, politics and world events.'], ['One', 'Adaptive engine', `${GR} connects analysis, strategy and execution.`], ['Web3', 'Wallet-based access', 'Interaction through a crypto wallet, without a traditional account.']]
+  const items = [['4', 'Distinct markets', 'Sports, crypto, politics and world events.'], ['One', 'Adaptive engine', `${GR} connects analysis, strategy and execution.`], ['Web3', 'Wallet-based access', 'Interaction through a crypto wallet, without a traditional account.']]
   return <section className="scene capabilities-section" aria-label="Platform at a glance"><VideoBackground index={2} paused={paused} /><div className="scene-content capabilities-content"><Reveal><div className="capability-grid">{items.map(([value, title, text]) => <article key={title}><div className="capability-value">{value}</div><h3>{title}</h3><p>{text}</p></article>)}</div></Reveal></div></section>
 }
 
 function Technology({ paused }: { paused: boolean }) {
-  const items = [['Rust architecture', 'Built for efficient resource use and high-performance market processing.'], ['Real-time analysis', 'Evaluates liquidity, trading flows, momentum and volatility as conditions change.'], ['Adaptive execution', 'Adjusts trade direction, position size and frequency to current market signals.'], ['Risk controls', 'Filters signals, manages exposure and responds to unfavorable market conditions.']]
-  return <section className="scene technology-section" id="technology"><VideoBackground index={3} paused={paused} /><div className="scene-content technology-content"><Reveal className="technology-top"><div><h2>Adaptive<br />by design.</h2></div><p>A trading engine built with Rust and oriented toward high-frequency trading. It analyzes Polymarket data and adapts decisions to changing conditions.</p></Reveal><Reveal className="technology-bottom"><div className="engine-flow" aria-label="Engine workflow">{['Market data', 'Signal analysis', 'Risk evaluation', 'Execution'].map(x => <div key={x}><h3>{x}</h3></div>)}</div><div className="technology-features">{items.map(([title, text]) => <article key={title}><h3>{title}</h3><p>{text}</p></article>)}</div></Reveal></div></section>
+  const items = [
+    ['Market data', 'Rust architecture', 'Built for efficient resource use and high-performance market processing.'],
+    ['Signal analysis', 'Real-time analysis', 'Evaluates liquidity, trading flows, momentum and volatility as conditions change.'],
+    ['Strategy selection', 'Market-specific strategies', 'Matches each trading approach to the information, probabilities and activity of its market.'],
+    ['Risk evaluation', 'Risk controls', 'Filters signals, manages exposure and responds to unfavorable market conditions.'],
+    ['Position sizing', 'Adaptive exposure', 'Adjusts position size to current market signals and risk constraints.'],
+    ['Execution', 'Adaptive execution', 'Adjusts trade direction and frequency to current market signals.'],
+  ]
+  return <section className="scene technology-section" id="technology"><VideoBackground index={3} paused={paused} /><div className="scene-content technology-content"><Reveal className="technology-top"><div><h2>Adaptive<br />by design.</h2></div><p>A trading engine built with Rust and oriented toward high-frequency trading. It analyzes Polymarket data and adapts decisions to changing conditions.</p></Reveal><Reveal className="technology-bottom"><div className="engine-flow" aria-label="Engine workflow">{items.map(([title, subtitle, text]) => <article key={title}><h3>{title}</h3><div className="engine-detail"><h4>{subtitle}</h4><p>{text}</p></div></article>)}</div></Reveal></div></section>
 }
 
 const strategyArtwork: Record<(typeof strategies)[number]['kind'], string> = {
@@ -176,21 +154,36 @@ function Partners() {
 }
 
 function VerificationVisual() {
-  return <div className="verification-visual" aria-hidden="true">
-    <div className="verification-jelly-container">
-      <img src="/d2.gif" alt="" className="verification-jelly verification-jelly--rose" />
-      <img src="/d2.gif" alt="" className="verification-jelly verification-jelly--violet" />
-      <img src="/d2.gif" alt="" className="verification-jelly verification-jelly--lilac" />
-    </div>
-  </div>
+  return <div className="verification-visual" aria-hidden="true"><video src="/yellowlamp.mp4" autoPlay muted loop playsInline preload="metadata" tabIndex={-1} /></div>
 }
 
 function Transparency() {
-  return <section className="editorial-section" id="transparency"><div className="transparency-layout"><Reveal><VerificationVisual /></Reveal><Reveal className="transparency-copy"><h2>Transparency & Web3</h2><p>{projectName} is built on Web3 principles, featuring direct interaction via crypto wallets and logic defined by smart contracts.</p><p>Key operational parameters are embedded in the code and can be verified directly on the blockchain. Users can independently check the contract address, its code, and the transaction history.</p><p className="transparency-note">Transparency begins with the ability to verify the system independently.</p></Reveal></div></section>
+  return <section className="editorial-section" id="transparency"><div className="transparency-layout"><Reveal className="transparency-artwork"><VerificationVisual /></Reveal><Reveal className="transparency-copy"><h2>Verify.<br />Not trust.</h2><p>{projectName} is built on Web3 principles, featuring direct interaction via crypto wallets and logic defined by smart contracts.</p><p>Key operational parameters are embedded in the code and can be verified directly on the blockchain. Users can independently check the contract address, its code, and the transaction history.</p><p className="transparency-note">Transparency begins with the ability to verify the system independently.</p></Reveal></div></section>
 }
 
 function Footer({ paused }: { paused: boolean }) {
-  return <footer className="footer"><div className="footer-content"><div className="footer-lockup"><div className="footer-brand"><Logo /><p className="footer-description">Algorithmic intelligence for prediction markets.</p><div className="social-links">{socials.map(social => <a href={social.href} key={social.href} target="_blank" rel="noopener noreferrer">{social.label}</a>)}</div></div></div><div className="footer-bottom">© 2026 {projectName}</div></div><div className="scene footer-visual"><VideoBackground index={4} paused={paused} /></div></footer>
+  return <footer className="footer">
+    <div className="footer-content">
+      <div className="footer-lockup">
+        <div className="footer-brand">
+          <Logo />
+          <p className="footer-description">Algorithmic intelligence for prediction markets. Real-time analysis, adaptive execution and Web3 infrastructure.</p>
+          <div className="footer-links">
+            <nav className="footer-link-group" aria-label="Footer navigation">
+              <h3>Explore</h3>
+              {navItems.map(([label, id]) => <a key={id} href={`#${id}`}>{label}</a>)}
+            </nav>
+            <nav className="footer-link-group" aria-label="Community and support">
+              <h3>Connect</h3>
+              {socials.map(social => <a href={social.href} key={social.href} target="_blank" rel="noopener noreferrer">{social.label}<span aria-hidden="true">↗</span></a>)}
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div className="scene footer-visual"><VideoBackground index={4} paused={paused} /></div>
+    <div className="footer-bottom">© 2026 {projectName}</div>
+  </footer>
 }
 
 export default function App() {
