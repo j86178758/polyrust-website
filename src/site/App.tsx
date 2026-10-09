@@ -154,7 +154,21 @@ function Partners() {
 }
 
 function VerificationVisual() {
-  return <div className="verification-visual" aria-hidden="true"><video src="/balls.mp4" autoPlay muted loop playsInline preload="metadata" tabIndex={-1} /></div>
+  return <div className="verification-visual" aria-hidden="true">
+    <svg width="0" height="0" style={{ position: 'absolute' }} focusable="false">
+      <defs>
+        <filter id="verification-rose-tint" colorInterpolationFilters="sRGB">
+          <feColorMatrix type="saturate" values="0" />
+          <feComponentTransfer>
+            <feFuncR type="linear" slope={168 / 255} />
+            <feFuncG type="linear" slope={93 / 255} />
+            <feFuncB type="linear" slope={116 / 255} />
+          </feComponentTransfer>
+        </filter>
+      </defs>
+    </svg>
+    <video src="/formulas4.mp4" autoPlay muted loop playsInline preload="metadata" tabIndex={-1} />
+  </div>
 }
 
 function Transparency() {

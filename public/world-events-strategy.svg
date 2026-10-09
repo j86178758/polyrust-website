@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000">
+  <defs>
+    <radialGradient id="back"><stop stop-color="#221c30"/><stop offset="1" stop-color="#09090c"/></radialGradient>
+    <radialGradient id="globe" cx="30%" cy="24%" r="80%"><stop stop-color="#ab8eac"/><stop offset=".5" stop-color="#65516c"/><stop offset="1" stop-color="#211c2b"/></radialGradient>
+    <clipPath id="sphere"><circle cx="400" cy="404" r="154"/></clipPath>
+    <linearGradient id="orbit"><stop stop-color="#987392"/><stop offset=".6" stop-color="#ebcadf"/><stop offset="1" stop-color="#664d70"/></linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="#09090c"/>
+  <ellipse cx="400" cy="400" rx="380" ry="380" fill="url(#back)"/>
+  <circle cx="400" cy="404" r="154" fill="url(#globe)" stroke="#c0a4c2" stroke-width="1.5"/>
+  <g clip-path="url(#sphere)" fill="none" stroke="#d5b9d3" stroke-opacity=".45" stroke-width="1.5">
+    <ellipse cx="400" cy="404" rx="65" ry="154"/>
+    <ellipse cx="400" cy="404" rx="122" ry="154"/>
+    <ellipse cx="400" cy="404" rx="154" ry="57"/>
+    <path d="M400 250v308M246 404h308"/>
+    <path d="M270 321q130 69 260 0M270 487q130-69 260 0"/>
+  </g>
+  <ellipse cx="400" cy="404" rx="226" ry="78" transform="rotate(-25 400 404)" fill="none" stroke="url(#orbit)" stroke-width="2"/>
+  <circle cx="598" cy="309" r="8" fill="#edcada"/>
+  <ellipse cx="400" cy="637" rx="137" ry="13" fill="#000" opacity=".4"/>
+</svg>
