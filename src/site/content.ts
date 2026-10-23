@@ -14,10 +14,10 @@ export const socials = [
 ] as const
 
 export const strategies = [
-  { name: 'Sports', kind: 'sports', text: 'Responds to changing outcome probabilities and trading activity in sports prediction markets.' },
-  { name: 'Crypto', kind: 'crypto', text: 'Analyzes price movements, volatility and short-term signals in cryptocurrency prediction markets.' },
-  { name: 'Politics', kind: 'politics', text: 'Evaluates how new information shifts probabilities in political prediction markets.' },
-  { name: 'World events', kind: 'world', text: 'Tracks emerging market signals as global developments change expectations and probabilities.' },
+  { name: 'Sports Bot', kind: 'sports', text: 'Responds to changing outcome probabilities and trading activity in sports prediction markets.', investment: '25–1,000 USDT', duration: '30 Days', dailyProfit: '1%', totalRoi: '30%' },
+  { name: 'Crypto Bot', kind: 'crypto', text: 'Analyzes price movements, volatility and short-term signals in cryptocurrency prediction markets.', investment: '1,000–5,000 USDT', duration: '60 Days', dailyProfit: '1.5%', totalRoi: '90%' },
+  { name: 'Politics Bot', kind: 'politics', text: 'Evaluates how new information shifts probabilities in political prediction markets.', investment: '5,000–25,000 USDT', duration: '90 Days', dailyProfit: '2%', totalRoi: '180%' },
+  { name: 'World Events Bot', kind: 'world', text: 'Tracks emerging market signals as global developments change expectations and probabilities.', investment: '25,000–100,000 USDT', duration: '120 Days', dailyProfit: '3%', totalRoi: '360%' },
 ] as const
 
 export const partners = [6, 4, 3, 2, 1, 0.5, 0.5, 0.5, 0.5, 0.5]
