@@ -172,7 +172,13 @@ function Footer({ paused }: { paused: boolean }) {
         </div>
       </div>
     </div>
-    <div className="footer-bottom">© 2026 {projectName}</div>
+    <div className="footer-bottom-bar">
+      <a className="footer-bottom-brand" href="#top" aria-label={`${projectName} home`}><Mark /><span>{projectName}</span></a>
+      <nav className="footer-bottom-nav" aria-label="Footer navigation">
+        {navItems.map(([label, id]) => <a href={`#${id}`} key={id}>{label}</a>)}
+      </nav>
+      <span className="footer-bottom-copyright">© 2026 {projectName}. All rights reserved.</span>
+    </div>
   </footer>
 }
 
