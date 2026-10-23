@@ -110,7 +110,7 @@ svg { display: block; }
 .strategies-section .strategies-copy h2 { grid-column: 1; grid-row: 1 / span 2; }
 .strategies-section .strategies-copy > p { grid-column: 2; max-width: 560px; margin-top: 0; font-size: 14px; line-height: 22px; color: #b7b5c1; }
 .strategies-section .strategies-copy > p + p { margin-top: 0; }
-.strategy-masonry { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: 24px; align-items: stretch; }
+.strategy-masonry { display: grid; width: 100%; max-width: 1040px; margin-inline: auto; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: 24px; align-items: stretch; }
 .strategy-masonry > .reveal { min-width: 0; display: flex; }
 .strategy-card { width: 100%; border: 1px solid var(--border); background: #08080a; border-radius: 8px; overflow: hidden; transition: border-color .3s; }
 .strategy-card:hover { border-color: rgba(255,255,255,.35); }
@@ -142,6 +142,7 @@ svg { display: block; }
 .connect-bot-button:disabled { color: #fff; opacity: 1; }
 .section-note { font-size: 12px; color: #87848e; max-width: 900px; margin-top: 28px; }
 .partners-layout, .transparency-layout { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(48px, 6vw, 88px); align-items: center; }
+.partners-layout { max-width: 1040px; margin-inline: auto; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; }
 .transparency-section { max-width: 1152px; padding: 80px 40px 104px; }
 .transparency-layout { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(72px, 9vw, 132px); align-items: center; }
 .transparency-copy { position: static; width: 100%; max-width: 460px; }
@@ -156,12 +157,12 @@ svg { display: block; }
 .partner-copy h2 { max-width: 560px; font-size: clamp(46px, 4.4vw, 62px); line-height: 1.08; }
 .partner-copy > p { max-width: 540px; font-size: 14px; line-height: 22px; }
 .partner-copy .partner-note, .transparency-copy .transparency-note { font-size: 11px; line-height: 1.75; color: var(--muted); margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); }
-.levels-card { width: 100%; padding: 28px 30px; border: 1px solid var(--border); border-radius: 12px; background: #08080a; transition: border-color .25s ease, box-shadow .25s ease, background-color .25s ease; }
+.levels-card { width: 100%; max-width: 500px; justify-self: end; padding: 20px 24px; border: 1px solid var(--border); border-radius: 12px; background: #08080a; transition: border-color .25s ease, box-shadow .25s ease, background-color .25s ease; }
 .levels-card:hover { border-color: rgba(255,255,255,.35); box-shadow: 0 0 28px rgba(255,255,255,.04), inset 0 0 24px rgba(255,255,255,.02); }
-.levels-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 20px; }
+.levels-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 12px; }
 .levels-heading h3 { font-size: 18px; }
 .levels-heading > span { font-size: 10px; color: var(--muted); white-space: nowrap; }
-.level-row { display: flex; align-items: center; gap: 14px; padding: 13px 12px; margin: 0 -12px; border-top: 1px solid rgba(255,255,255,.08); border-radius: 6px; }
+.level-row { display: flex; align-items: center; gap: 14px; padding: 7px 10px; margin: 0 -10px; border-top: 1px solid rgba(255,255,255,.08); border-radius: 6px; }
 .level-num { font-size: 10px; color: var(--muted); }
 .level-name { font-size: 12px; width: 66px; }
 .level-track { height: 2px; background: #292027; flex: 1; transition: background .2s ease; }
