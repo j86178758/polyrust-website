@@ -153,49 +153,25 @@ function Partners() {
   return <section className="editorial-section partners-section" id="partners"><div className="partners-layout"><Reveal className="partner-copy"><h2>Built to grow.<br />Together.</h2><p>A ten-level referral program with all levels available from the start.</p><p>Rewards are calculated from the investment of a partner at the corresponding level. They are funded by a dedicated partner balance, replenished from a portion of trading profits.</p><p className="partner-note">Referral percentages describe the program structure, not investment returns.</p></Reveal><Reveal><div className="levels-card"><div className="levels-heading"><h3>Referral structure</h3><span>10 levels</span></div>{partners.map((reward, i) => <div className="level-row" key={i}><span className="level-num">{String(i + 1).padStart(2, '0')}</span><span className="level-name">Level {i + 1}</span><span className="level-track" aria-hidden="true"><i style={{ width: `${reward / 6 * 100}%` }} /></span><span className="level-reward">{reward}%</span></div>)}</div></Reveal></div></section>
 }
 
-function VerificationVisual() {
-  return <div className="verification-visual" aria-hidden="true">
-    <svg width="0" height="0" style={{ position: 'absolute' }} focusable="false">
-      <defs>
-        <filter id="verification-rose-tint" colorInterpolationFilters="sRGB">
-          <feColorMatrix type="saturate" values="0" />
-          <feComponentTransfer>
-            <feFuncR type="linear" slope={168 / 255} />
-            <feFuncG type="linear" slope={93 / 255} />
-            <feFuncB type="linear" slope={116 / 255} />
-          </feComponentTransfer>
-        </filter>
-      </defs>
-    </svg>
-    <video src="/formulas4.mp4" autoPlay muted loop playsInline preload="metadata" tabIndex={-1} />
-  </div>
-}
-
 function Transparency() {
-  return <section className="editorial-section" id="transparency"><div className="transparency-layout"><Reveal className="transparency-artwork"><VerificationVisual /></Reveal><Reveal className="transparency-copy"><h2>Verify.<br />Not trust.</h2><p>{projectName} is built on Web3 principles, featuring direct interaction via crypto wallets and logic defined by smart contracts.</p><p>Key operational parameters are embedded in the code and can be verified directly on the blockchain. Users can independently check the contract address, its code, and the transaction history.</p><p className="transparency-note">Transparency begins with the ability to verify the system independently.</p></Reveal></div></section>
+  const features = ['On-Chain Verification', 'Transparent Logic', 'Verifiable Transactions']
+  return <section className="editorial-section transparency-section" id="transparency"><div className="transparency-layout"><Reveal className="transparency-copy"><h2>Transparency &amp;<br />Web3</h2><p>{projectName} is built on Web3 principles, featuring direct interaction via crypto wallets and logic defined by smart contracts.</p><p>Key operational parameters are embedded in the code and can be verified directly on the blockchain. Users can independently check the contract address, its code, and the transaction history.</p><p>Transparency begins with the ability to verify the system independently.</p></Reveal><Reveal className="transparency-features">{features.map(feature => <article className="transparency-feature" key={feature}><h3>{feature}</h3></article>)}</Reveal></div></section>
 }
 
 function Footer({ paused }: { paused: boolean }) {
   return <footer className="footer">
+    <div className="scene footer-visual"><VideoBackground index={4} paused={paused} /></div>
     <div className="footer-content">
       <div className="footer-lockup">
         <div className="footer-brand">
           <Logo />
-          <p className="footer-description">Algorithmic intelligence for prediction markets. Real-time analysis, adaptive execution and Web3 infrastructure.</p>
-          <div className="footer-links">
-            <nav className="footer-link-group" aria-label="Footer navigation">
-              <h3>Explore</h3>
-              {navItems.map(([label, id]) => <a key={id} href={`#${id}`}>{label}</a>)}
-            </nav>
-            <nav className="footer-link-group" aria-label="Community and support">
-              <h3>Connect</h3>
-              {socials.map(social => <a href={social.href} key={social.href} target="_blank" rel="noopener noreferrer">{social.label}<span aria-hidden="true">↗</span></a>)}
-            </nav>
+          <p className="footer-description">Algorithmic intelligence for prediction markets.</p>
+          <div className="social-links" aria-label="Social links">
+            {socials.map(social => <a href={social.href} key={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label}>{social.label}</a>)}
           </div>
         </div>
       </div>
     </div>
-    <div className="scene footer-visual"><VideoBackground index={4} paused={paused} /></div>
     <div className="footer-bottom">© 2026 {projectName}</div>
   </footer>
 }
