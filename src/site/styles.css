@@ -36,7 +36,7 @@ svg { display: block; }
 .brand-mark { display: inline-block; width: 28px; height: 28px; flex-shrink: 0; overflow: hidden; font-family: 'Material Icons'; font-size: 28px; font-weight: normal; font-style: normal; line-height: 1; letter-spacing: normal; text-transform: none; white-space: nowrap; word-wrap: normal; direction: ltr; font-feature-settings: 'liga'; -webkit-font-smoothing: antialiased; }
 .site-header .brand-mark { color: var(--accent-bright); text-shadow: 0 0 12px rgba(255, 107, 164, .48); }
 .logo { display: inline-flex; align-items: center; gap: 10px; font-family: 'Stack Sans Notch', Arial, sans-serif; font-size: 18px; font-weight: 700; letter-spacing: .02em; }
-.footer .logo { font-size: 16px; opacity: 0.82; }
+.footer .logo { font-size: 16px; opacity: 0.55; }
 .site-header { position: fixed; inset: 0 0 auto; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 32px; pointer-events: none; animation: entrance 1s .2s both; }
 .site-header > * { pointer-events: auto; }
 .header-left { display: flex; gap: 8px; align-items: center; position: relative; }
@@ -204,7 +204,7 @@ svg { display: block; }
 .footer { position: relative; display: grid; grid-template-columns: 1fr 1fr; margin-top: 40px; border-top: 1px solid var(--border); }
 .footer-visual { min-height: 560px; }
 .footer-visual .scene-overlay { background: linear-gradient(0deg, rgba(0,0,0,.8), rgba(0,0,0,.1)); }
-.footer-content { padding: 48px clamp(24px, 5.56vw, 80px); display: grid; grid-template-rows: 1fr; row-gap: 24px; }
+.footer-content { padding: 48px clamp(40px, 7.65vw, 120px) 48px clamp(40px, 7.65vw, 120px); display: grid; grid-template-rows: 1fr; row-gap: 24px; }
 .footer-lockup { grid-row: 1; width: 100%; max-width: 520px; margin-inline-start: 0; display: flex; align-items: flex-start; transform: none; }
 .footer-brand { width: 100%; }
 .footer-description { font-size: 15px; max-width: 340px; margin: 20px 0 28px; }
@@ -235,7 +235,7 @@ svg { display: block; }
   .capability-grid { gap: 32px; }
   .technology-features { gap: 24px; }
   .engine-flow { column-gap: 64px; }
-  .footer-content { padding-left: clamp(24px, 5.56vw, 64px); padding-right: clamp(24px, 5.56vw, 64px); }
+  .footer-content { padding-left: clamp(48px, 7.3vw, 80px); padding-right: 32px; }
 }
 @media (max-width: 800px) {
   .site-header { padding: 16px 24px; }
