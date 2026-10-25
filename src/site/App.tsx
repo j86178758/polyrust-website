@@ -155,20 +155,22 @@ function Strategies() {
         <h2>Different markets.</h2>
         <p>Four purpose-built approaches. Each responds to the information, probabilities and activity of its own market.</p>
         <div className="selected-strategy" aria-live="polite" aria-atomic="true">
-          <p className="selected-strategy-description">{activeStrategy.text}</p>
-          <div className="strategy-terms">
-            <div className="strategy-terms-heading"><span>Investment conditions</span><span>USDT · BEP-20</span></div>
-            <dl className="strategy-terms-grid">
-              <div><dt>Investment</dt><dd>{activeStrategy.investment}</dd></div>
-              <div><dt>Duration</dt><dd>{activeStrategy.duration}</dd></div>
-              <div><dt>Daily profit</dt><dd>{activeStrategy.dailyProfit}</dd></div>
-              <div><dt>Total ROI</dt><dd>{activeStrategy.totalRoi}</dd></div>
-            </dl>
-            <div className="strategy-terms-meta"><span>Daily accrual: 7/7</span><span>Profit withdrawal: Anytime</span></div>
+          <div className="selected-strategy-content" key={activeStrategy.kind}>
+            <p className="selected-strategy-description">{activeStrategy.text}</p>
+            <div className="strategy-terms">
+              <div className="strategy-terms-heading"><span>Investment conditions</span><span>USDT · BEP-20</span></div>
+              <dl className="strategy-terms-grid">
+                <div><dt>Investment</dt><dd>{activeStrategy.investment}</dd></div>
+                <div><dt>Duration</dt><dd>{activeStrategy.duration}</dd></div>
+                <div><dt>Daily profit</dt><dd>{activeStrategy.dailyProfit}</dd></div>
+                <div><dt>Total ROI</dt><dd>{activeStrategy.totalRoi}</dd></div>
+              </dl>
+              <div className="strategy-terms-meta"><span>Daily accrual: 7/7</span><span>Profit withdrawal: Anytime</span></div>
+            </div>
           </div>
         </div>
       </Reveal>
-      <div className="strategy-masonry" aria-label="Choose a market">
+      <div className="strategy-masonry" role="group" aria-label="Choose a market">
         {strategies.map(strategy => <Reveal key={strategy.kind}>
           <button
             type="button"
@@ -185,6 +187,25 @@ function Strategies() {
           </button>
         </Reveal>)}
       </div>
+      <div className="strategy-mobile-grid">
+        {strategies.map(strategy => <article className="strategy-mobile-card" key={strategy.kind}>
+          <div className="strategy-mobile-visual">
+            <img src={strategyArtwork[strategy.kind]} alt="" />
+            <div className="strategy-scrim" aria-hidden="true" />
+            <h3>{strategy.name}</h3>
+          </div>
+          <div className="strategy-mobile-content">
+            <p>{strategy.text}</p>
+            <dl className="strategy-mobile-terms">
+              <div><dt>Investment</dt><dd>{strategy.investment}</dd></div>
+              <div><dt>Duration</dt><dd>{strategy.duration}</dd></div>
+              <div><dt>Daily profit</dt><dd>{strategy.dailyProfit}</dd></div>
+              <div><dt>Total ROI</dt><dd>{strategy.totalRoi}</dd></div>
+            </dl>
+            <p className="strategy-mobile-meta">USDT · BEP-20 · Daily accrual 7/7 · Withdrawal anytime</p>
+          </div>
+        </article>)}
+      </div>
     </div>
   </section>
 }
@@ -197,12 +218,12 @@ function VerificationVisual() {
   return <div className="verification-visual" aria-hidden="true">
     <svg width="0" height="0" style={{ position: 'absolute' }} focusable="false">
       <defs>
-        <filter id="verification-rose-tint" colorInterpolationFilters="sRGB">
+        <filter id="verification-accent-tint" colorInterpolationFilters="sRGB">
           <feColorMatrix type="saturate" values="0" />
           <feComponentTransfer>
-            <feFuncR type="linear" slope={168 / 255} />
-            <feFuncG type="linear" slope={93 / 255} />
-            <feFuncB type="linear" slope={116 / 255} />
+            <feFuncR type="linear" slope={255 / 255} />
+            <feFuncG type="linear" slope={107 / 255} />
+            <feFuncB type="linear" slope={164 / 255} />
           </feComponentTransfer>
         </filter>
       </defs>
@@ -230,6 +251,12 @@ function Footer({ paused }: { paused: boolean }) {
             <nav className="footer-link-group" aria-label="Community and support">
               <h3>Connect</h3>
               {socials.map(social => <a href={social.href} key={social.href} target="_blank" rel="noopener noreferrer">{social.label}<span aria-hidden="true">↗</span></a>)}
+            </nav>
+            <nav className="footer-link-group" aria-label="Legal information">
+              <h3>Legal</h3>
+              <a href="/privacy-policy">Privacy policy</a>
+              <a href="/terms-of-use">Terms of use</a>
+              <a href="/legal">Legal information</a>
             </nav>
           </div>
         </div>
