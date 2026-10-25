@@ -146,7 +146,47 @@ const strategyArtwork: Record<(typeof strategies)[number]['kind'], string> = {
 }
 
 function Strategies() {
-  return <section className="editorial-section strategies-section" id="strategies"><div className="strategies-layout"><Reveal className="strategies-copy"><h2>Different markets.</h2><p>Four purpose-built approaches. Each responds to the information, probabilities and activity of its own market.</p><p>Analysis, risk filters and execution adapt to the rhythm of each category—so signals stay in context instead of being flattened into one generic playbook.</p></Reveal><div className="strategy-masonry">{strategies.map(strategy => <Reveal key={strategy.kind}><article className="strategy-card strategy-card-illustrated"><div className="strategy-visual"><img src={strategyArtwork[strategy.kind]} alt="" /><div className="strategy-scrim" aria-hidden="true" /><div className="strategy-info"><h3>{strategy.name}</h3><p>{strategy.text}</p></div></div></article></Reveal>)}</div></div></section>
+  const [activeKind, setActiveKind] = useState<(typeof strategies)[number]['kind']>(strategies[0].kind)
+  const activeStrategy = strategies.find(strategy => strategy.kind === activeKind) ?? strategies[0]
+
+  return <section className="editorial-section strategies-section" id="strategies">
+    <div className="strategies-layout">
+      <Reveal className="strategies-copy">
+        <h2>Different markets.</h2>
+        <p>Four purpose-built approaches. Each responds to the information, probabilities and activity of its own market.</p>
+        <div className="selected-strategy" aria-live="polite" aria-atomic="true">
+          <p className="selected-strategy-description">{activeStrategy.text}</p>
+          <div className="strategy-terms">
+            <div className="strategy-terms-heading"><span>Investment conditions</span><span>USDT · BEP-20</span></div>
+            <dl className="strategy-terms-grid">
+              <div><dt>Investment</dt><dd>{activeStrategy.investment}</dd></div>
+              <div><dt>Duration</dt><dd>{activeStrategy.duration}</dd></div>
+              <div><dt>Daily profit</dt><dd>{activeStrategy.dailyProfit}</dd></div>
+              <div><dt>Total ROI</dt><dd>{activeStrategy.totalRoi}</dd></div>
+            </dl>
+            <div className="strategy-terms-meta"><span>Daily accrual: 7/7</span><span>Profit withdrawal: Anytime</span></div>
+          </div>
+        </div>
+      </Reveal>
+      <div className="strategy-masonry" aria-label="Choose a market">
+        {strategies.map(strategy => <Reveal key={strategy.kind}>
+          <button
+            type="button"
+            className={`strategy-card strategy-card-illustrated${activeStrategy.kind === strategy.kind ? ' is-active' : ''}`}
+            aria-pressed={activeStrategy.kind === strategy.kind}
+            aria-label={`Show ${strategy.name} conditions`}
+            onClick={() => setActiveKind(strategy.kind)}
+          >
+            <div className="strategy-visual">
+              <img src={strategyArtwork[strategy.kind]} alt="" />
+              <div className="strategy-scrim" aria-hidden="true" />
+              <div className="strategy-info"><h3>{strategy.name}</h3></div>
+            </div>
+          </button>
+        </Reveal>)}
+      </div>
+    </div>
+  </section>
 }
 
 function Partners() {
