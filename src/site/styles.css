@@ -32,6 +32,7 @@ svg { display: block; }
 .skip-link { position: fixed; top: -100px; left: 24px; background: #fff; color: #000; padding: 12px; z-index: 100; }
 .skip-link:focus { top: 90px; }
 .brand-mark { display: inline-block; width: 28px; height: 28px; flex-shrink: 0; overflow: hidden; font-family: 'Material Icons'; font-size: 28px; font-weight: normal; font-style: normal; line-height: 1; letter-spacing: normal; text-transform: none; white-space: nowrap; word-wrap: normal; direction: ltr; font-feature-settings: 'liga'; -webkit-font-smoothing: antialiased; }
+.site-header .brand-mark { color: #ff5ca8; text-shadow: 0 0 12px rgba(255, 76, 160, .42); }
 .logo { display: inline-flex; align-items: center; gap: 10px; font-family: 'Stack Sans Notch', Arial, sans-serif; font-size: 18px; font-weight: 700; letter-spacing: .02em; }
 .footer .logo { font-size: 16px; opacity: 1; }
 .site-header { position: fixed; inset: 0 0 auto; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 32px; pointer-events: none; animation: entrance 1s .2s both; }

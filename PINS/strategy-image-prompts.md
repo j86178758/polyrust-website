@@ -1,74 +1,72 @@
 # Промпты для картинок Different markets
 
-Общий стиль: качественный предметный 3D-рендер, тёмный фон, мягкий свет и минимум лишних деталей. Не иконки, но и не перегруженные сцены. Снизу оставляем спокойную область для текста карточек.
+## Направление серии
 
-## 1. Sports — один мяч
+Использовать приложенную картинку с футболистом как стилевой референс для всех четырёх изображений: динамичная кинематографичная цифровая сцена, глубокий тёмно-синий фон, электрические синие и фиолетовые лучи, яркие розово-малиновые акценты в цвет сайта. Светящиеся линии и геометрические элементы создают ощущение цифрового рынка, но не должны забирать внимание у основного сюжета.
 
-Формат: **4:5**.
+Картинки должны выглядеть как четыре кадра одной серии: одинаковые контраст, глубина, характер свечения и уровень детализации. Это не предметная съёмка на студийном фоне и не плоская иллюстрация. Сцена выразительная и энергичная, но с одним ясным главным объектом. Основной объект держать около центра кадра; не помещать важные детали у краёв, чтобы изображение выдерживало кадрирование в карточке. Нижнюю часть затемнить мягким градиентом для названия поверх изображения.
+
+Для каждого запроса приложить исходную картинку как style reference. Если генератор поддерживает image strength, использовать её только для переноса палитры, света и атмосферы, а не сюжета.
+
+## 1. Sports — футболист и мяч
 
 ```text
-Premium photorealistic 3D product render of a single football, floating against a near-black studio background. A sophisticated editorial image for a prediction-market website, not a sports advertisement.
+Create a cinematic digital sports scene using the attached image as a visual style reference. Keep its deep navy and near-black background, vivid electric-blue and violet light, magenta-pink accents, glowing geometric lines, dramatic contrast and energetic atmosphere.
 
-The ball has matte charcoal panels, subtle realistic texture and restrained metallic details. Soft ivory key light reveals its shape, with a muted dusty-rose rim light and a faint burgundy reflection. Natural shading, convincing material depth, elegant silhouette.
+Show a close, dynamic crop of an athlete's lower legs in motion, wearing modern dark football boots, controlling a luminous soccer ball just above a dark playing surface. The ball is the brightest focal point, with crisp realistic panel detail and a restrained violet-magenta glow. Add a subtle burst of blue and pink light at the point of contact, like a stylized energy trail, not fire or smoke. No face; keep the action and ball clearly recognizable at thumbnail size.
 
-One main object, centered slightly above the middle, with generous negative space around it. Keep the bottom 30% dark and visually quiet for a text overlay. The subject should remain recognizable when cropped to a wider card.
+Surround the scene with a few elegant digital field lines and abstract probability-like marks, softly out of focus and secondary to the athlete. Use a coherent palette of midnight navy, electric blue, violet and controlled magenta-pink highlights. Keep the lower 25% relatively dark and calm for a title overlay. Central composition with safe space around the subject for flexible card cropping.
 
-Minimal composition, premium product-photography quality. No additional balls, stadium, particles, smoke, text or logos.
+Premium cinematic 3D render, realistic materials, crisp focal subject, atmospheric depth, polished editorial art direction. No words, numbers, logos, team crests, flags, watermark, extra balls, crowd, stadium signage or visual clutter.
 ```
 
-## 2. Crypto — стеклянные свечи
-
-Формат: **16:11**.
+## 2. Crypto — цифровой рынок
 
 ```text
-Premium photorealistic 3D product render of three sculptural trading candlesticks arranged as a compact financial-chart composition against a near-black studio background.
+Create a cinematic digital-asset market scene using the attached image as a visual style reference. Match its deep navy and near-black environment, vivid electric-blue and violet illumination, restrained magenta-pink accents, glowing geometric lines, dramatic contrast and energetic atmosphere.
 
-The candlesticks are physical objects made of smoked glass and brushed dark metal, with different heights and thin, clearly visible wicks. Subtle dusty-rose and muted mauve reflections, soft ivory highlights, realistic glass thickness and controlled reflections. An understated financial editorial image, not a futuristic dashboard.
+Show one strong central composition of three-dimensional market candlesticks rising and falling across a dark reflective surface. The candlesticks should feel like luminous glass and dark polished metal, with clear silhouettes and subtle blue-violet cores edged by controlled magenta light. Add a few thin, elegant data paths and abstract grid lines receding into depth to suggest a live digital market. Keep them sparse and subordinate to the candlesticks; no readable charts or interface panels.
 
-Place the composition in the central area, slightly above the middle. Use generous negative space and keep the bottom 30% dark and quiet for a text overlay. Clear silhouette and strong readability at small sizes.
+The image should feel sophisticated and technology-driven, not like a generic crypto advertisement. Central focal composition, clean silhouette at small size, dark calm lower 25% for a title overlay, and safe space around important elements for flexible card cropping.
 
-Elegant, restrained, high-end studio photography. No coins, currency symbols, screens, numbers, labels, glowing networks or extra objects.
+Premium cinematic 3D render, realistic glass and metal, atmospheric depth, polished editorial art direction. No coins, currency symbols, cryptocurrency logos, text, numbers, dashboards, screens, watermark, excessive particles or clutter.
 ```
 
-## 3. Politics — бюллетень и урна
-
-Формат: **4:3**.
+## 3. Politics — голосование и общественный выбор
 
 ```text
-Premium photorealistic 3D product render of a minimal ballot box with a single paper ballot partially inserted into its narrow slot. Neutral, nonpartisan imagery for a political prediction-market website.
+Create a cinematic civic decision scene using the attached image as a visual style reference. Match its deep navy and near-black background, vivid electric-blue and violet illumination, controlled magenta-pink accents, glowing geometric lines and dramatic yet refined atmosphere.
 
-The box is made of matte graphite metal with softly rounded edges. The ballot is warm ivory paper with a small embossed checkmark and no writing. A subtle three-quarter camera angle reveals the top and front of the box. Soft studio lighting, muted burgundy reflections and a restrained dusty-rose rim light against a near-black background.
+Show a single ballot being placed into a sleek, dark ballot box. The ballot and slot are the clear focal point, illuminated by a focused cool-blue light with a subtle magenta edge. In the distant background, suggest a grand civic hall with abstract architectural forms and a few soft vertical light columns, without depicting a specific country, party or recognizable government building. Add a small number of delicate digital lines to imply changing public sentiment and probabilities, but keep the scene grounded and uncluttered.
 
-Keep the object centered slightly above the middle, with ample negative space. The bottom 30% should remain dark and visually quiet for a text overlay.
+Neutral, nonpartisan visual language. No people in focus, no political personalities, no flags or national symbols. Keep the main action centered, legible at thumbnail size, and leave the lower 25% relatively dark for a title overlay. Preserve safe space around the subject for flexible card cropping.
 
-Sophisticated editorial product photography, realistic materials, simple composition. No flags, politicians, national emblems, slogans, crowds or decorative objects.
+Premium cinematic 3D render, realistic materials, atmospheric depth, polished editorial art direction. No readable text, letters, numbers, slogans, campaign signs, party colors, logos, watermark or visual clutter.
 ```
 
-## 4. World events — объёмный глобус
-
-Формат: **5:6**.
+## 4. World Events — взаимосвязанный мир
 
 ```text
-Premium photorealistic 3D product render of a single sculptural globe floating against a near-black studio background.
+Create a cinematic global-events scene using the attached image as a visual style reference. Match its deep navy and near-black atmosphere, vivid electric-blue and violet illumination, controlled magenta-pink accents, glowing geometric lines, dramatic contrast and sense of scale.
 
-The globe is made of smoked glass and dark graphite metal, with simplified continent shapes subtly etched into its surface. One thin brushed-metal orbital ring surrounds it at a gentle angle. Soft ivory key light, muted dusty-rose edge lighting and subtle mauve reflections. Realistic depth, refined materials, clear silhouette.
+Show one large, beautifully detailed globe as the central focal point, made of dark glass and subtly illuminated continents. A few fine luminous arcs sweep around the globe to suggest connections between regions and the movement of global events. In the far background, use only faint atmospheric silhouettes hinting at a city skyline and distant transport routes; the globe must remain dominant. Blue and violet should carry most of the light, with magenta-pink used sparingly at key intersections and along the globe's rim.
 
-Place the globe in the central area, slightly above the middle. Leave generous breathing room around the orbital ring. Keep the bottom 30% dark and uncluttered for a text overlay. The composition must also work when cropped to a wider card.
+Sophisticated and editorial rather than a busy sci-fi interface. Keep the globe centered, recognizable at thumbnail size, and the lower 25% relatively dark for a title overlay. Leave safe space around the globe for flexible card cropping.
 
-Minimal, elegant, premium editorial photography. No star field, satellite swarm, network lines, labels, glowing cities, particles or additional planets.
+Premium cinematic 3D render, realistic glass and lighting, atmospheric depth, polished editorial art direction. No labels, flags, borders, text, numbers, map UI, logos, watermark, satellite swarm, excessive nodes, particles or clutter.
 ```
 
 ## Общий negative prompt
 
-Если генератор поддерживает отдельное поле:
-
 ```text
-flat vector illustration, icon, clipart, cartoon, low-poly, cheap stock illustration, busy composition, excessive detail, intense neon glow, oversaturated colors, lens flare, particles, smoke, sparks, cosmic background, circuit patterns, tangled network lines, text, typography, watermark, logo, blurry subject, distorted geometry
+flat vector illustration, icon, clipart, cartoon, low-poly, cheap stock art, bright white background, warm orange or yellow color cast, oversaturated red wash, excessive neon, excessive bloom, lens flare, fire, smoke, sparks, dense particles, busy composition, tiny illegible details, cluttered interface, readable text, letters, numbers, watermark, logo, blurry focal subject, distorted anatomy, malformed hands or feet, duplicate objects
 ```
 
-## Как получить единый результат
+## Как получить единую серию
 
-- Использовать одну модель и одинаковый стилевой референс для всех четырёх изображений.
-- Генерировать без текста: названия и описания накладываются на сайте.
-- Начать со Sports. Если материалы и свет понравятся, использовать результат как референс для остальных.
-- Сохранить готовые изображения в PINS. Перед подключением оптимизировать в WebP.
+- Использовать одну модель, один aspect ratio и приложенную картинку как стилевой референс для всех четырёх генераций.
+- Генерировать по одному изображению за раз, не просить модель собрать четыре сюжета в один коллаж.
+- Сначала получить Sports и проверить баланс холодного синего/фиолетового с розовыми акцентами. Затем использовать удачный результат как дополнительный style reference для остальных изображений.
+- Не просить генератор добавлять название рынка: текст будет наложен средствами сайта.
+- Проверить картинки в реальных карточках и при кадрировании на мобильном; при необходимости скорректировать safe space и положение объекта.
+- Сохранить оригиналы в `PINS/strategy-originals/`, затем оптимизировать финальные версии в WebP или подходящий формат перед заменой файлов в `public/`.

@@ -139,10 +139,10 @@ function Technology({ paused }: { paused: boolean }) {
 }
 
 const strategyArtwork: Record<(typeof strategies)[number]['kind'], string> = {
-  sports: '/sports-strategy.png',
-  crypto: '/crypto-strategy.png',
-  politics: '/politics-strategy.png',
-  world: '/world-events-strategy.png',
+  sports: '/sports-strategy.jpeg',
+  crypto: '/crypto-strategy.jpeg',
+  politics: '/politics-strategy.jpeg',
+  world: '/world-events-strategy.jpeg',
 }
 
 function Strategies() {
