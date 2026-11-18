@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
-import { GR, navItems, partners, projectIcon, projectName, socials, strategies } from './content'
+import { GR, navItems, partners, publicProjectName, socials, strategies } from './content'
 
 const videos = [
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_083515_290e5a10-0b95-41af-a5e2-32b6389baa4d.mp4',
@@ -22,11 +22,11 @@ function useReducedMotion() {
 }
 
 function Mark() {
-  return <span className="brand-mark" aria-hidden="true">{projectIcon}</span>
+  return <svg className="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M7 4h6v17h15v3l-4 4H7z" /></svg>
 }
 
 function Logo() {
-  return <a className="logo" href="#top" aria-label={`${projectName} home`}><Mark /><span>{projectName}</span></a>
+  return <a className="logo" href="#top" aria-label={`${publicProjectName} home`}><Mark /><span>{publicProjectName}</span></a>
 }
 
 
@@ -114,11 +114,11 @@ function Header() {
 }
 
 function Hero({ paused }: { paused: boolean }) {
-  return <section className="scene hero" id="top"><VideoBackground index={0} scrub paused={paused} /><div className="dot-grid" aria-hidden="true" /><div className="hero-watermark" aria-hidden="true">{projectName}</div><div className="scene-content hero-content"><div className="hero-bottom"><div className="hero-copy"><h1>Market<br />Intelligence</h1><p>Real-time market analysis, adaptive trading strategies and Web3 infrastructure. One platform for a world of changing probabilities.</p><div className="hero-actions"><a className="button button-primary" href="#technology">Meet {GR}</a><a className="button button-ghost" href="#strategies">Explore markets</a></div></div><div className="hero-right"><h2><span className="hero-line">One engine.</span><br /><span className="hero-line">Every signal.</span></h2></div></div></div></section>
+  return <section className="scene hero" id="top"><VideoBackground index={0} scrub paused={paused} /><div className="dot-grid" aria-hidden="true" /><div className="hero-watermark" aria-hidden="true">{publicProjectName}</div><div className="scene-content hero-content"><div className="hero-bottom"><div className="hero-copy"><h1>Market<br />Intelligence</h1><p>Real-time market analysis, adaptive trading strategies and Web3 infrastructure. One platform for a world of changing probabilities.</p><div className="hero-actions"><a className="button button-primary" href="#technology">Meet {GR}</a><a className="button button-ghost" href="#strategies">Explore markets</a></div></div><div className="hero-right"><h2><span className="hero-line">One engine.</span><br /><span className="hero-line">Every signal.</span></h2></div></div></div></section>
 }
 
 function About({ paused }: { paused: boolean }) {
-  return <section className="scene about-section" id="about"><VideoBackground index={1} paused={paused} /><div className="scene-content about-content"><Reveal><p className="cinematic-copy">Markets turn information into probabilities.<br /><span>{projectName} turns market signals into a structured trading process.</span></p><div className="about-details"><p>Built on Web3 infrastructure and integrated with Polymarket, the platform brings market analysis and automated execution together.</p><p>Its trading engine evaluates liquidity, momentum and volatility across sports, crypto, politics and world events.</p><p>Wallet-based interaction replaces traditional registration. Key operational processes follow predefined smart contract logic.</p></div></Reveal></div></section>
+  return <section className="scene about-section" id="about"><VideoBackground index={1} paused={paused} /><div className="scene-content about-content"><Reveal><p className="cinematic-copy">Markets turn information into probabilities.<br /><span>{publicProjectName} turns market signals into a structured trading process.</span></p><div className="about-details"><p>Built on Web3 infrastructure and integrated with Polymarket, the platform brings market analysis and automated execution together.</p><p>Its trading engine evaluates liquidity, momentum and volatility across sports, crypto, politics and world events.</p><p>Wallet-based interaction replaces traditional registration. Key operational processes follow predefined smart contract logic.</p></div></Reveal></div></section>
 }
 
 function Capabilities({ paused }: { paused: boolean }) {
@@ -233,7 +233,7 @@ function VerificationVisual() {
 }
 
 function Transparency() {
-  return <section className="editorial-section" id="transparency"><div className="transparency-layout"><Reveal className="transparency-artwork"><VerificationVisual /></Reveal><Reveal className="transparency-copy"><h2>Verify.<br />Not trust.</h2><p>{projectName} is built on Web3 principles, featuring direct interaction via crypto wallets and logic defined by smart contracts.</p><p>Key operational parameters are embedded in the code and can be verified directly on the blockchain. Users can independently check the contract address, its code, and the transaction history.</p><p className="transparency-note">Transparency begins with the ability to verify the system independently.</p></Reveal></div></section>
+  return <section className="editorial-section" id="transparency"><div className="transparency-layout"><Reveal className="transparency-artwork"><VerificationVisual /></Reveal><Reveal className="transparency-copy"><h2>Verify.<br />Not trust.</h2><p>{publicProjectName} is built on Web3 principles, featuring direct interaction via crypto wallets and logic defined by smart contracts.</p><p>Key operational parameters are embedded in the code and can be verified directly on the blockchain. Users can independently check the contract address, its code, and the transaction history.</p><p className="transparency-note">Transparency begins with the ability to verify the system independently.</p></Reveal></div></section>
 }
 
 function Footer({ paused }: { paused: boolean }) {
@@ -263,12 +263,12 @@ function Footer({ paused }: { paused: boolean }) {
       </div>
     </div>
     <div className="scene footer-visual"><VideoBackground index={4} paused={paused} /></div>
-    <div className="footer-bottom">© 2026 {projectName}</div>
+    <div className="footer-bottom">© 2026 {publicProjectName}</div>
   </footer>
 }
 
 export default function App() {
   const paused = false
-  useEffect(() => { document.title = `${projectName} — Algorithmic Intelligence for Prediction Markets` }, [])
+  useEffect(() => { document.title = `${publicProjectName} — Algorithmic Intelligence for Prediction Markets` }, [])
   return <><a className="skip-link" href="#about">Skip introduction</a><Header /><main><Hero paused={paused} /><About paused={paused} /><Capabilities paused={paused} /><Technology paused={paused} /><Strategies /><Partners /><Transparency /></main><Footer paused={paused} /></>
 }

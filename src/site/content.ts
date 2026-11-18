@@ -1,4 +1,6 @@
+// Keep the internal dashboard's existing label while the public brand is updated.
 export const projectName = 'ProjName'
+export const publicProjectName = 'LAMAQUANT'
 export const projectIcon = 'polymer'
 export const GR = 'RUST-EXEC'
 
