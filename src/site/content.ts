@@ -10,9 +10,9 @@ export const navItems = [
 ] as const
 
 export const socials = [
-  { label: 'Telegram', href: 'https://t.me/polyrust_official' },
-  { label: 'Support', href: 'https://t.me/Anna_Polyrust_Support' },
-  { label: 'Instagram', href: 'https://www.instagram.com/polyrust_net' },
+  { label: 'Telegram', href: 'https://t.me/lamaquant_official' },
+  { label: 'Support', href: 'https://t.me/Lamaquant_Support_Anna' },
+  { label: 'Instagram', href: 'https://www.instagram.com/lamaquant/' },
 ] as const
 
 export const strategies = [
